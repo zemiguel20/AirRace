@@ -17,9 +17,8 @@ Map editor feature?
 
 ## TODO
 
-- Import and render plane model
 - Directional light (sun)
-- Skybox
+- Skybox & ambient light
 - Controls testing area
 - Camera and plane controls
 - TBD ...
