@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <raylib.h>
+#include "raylib/raylib.h"
 
 int main()
 {
