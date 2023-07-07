@@ -1,10 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://bahijhbk1h08u"]
+[gd_scene load_steps=8 format=3 uid="uid://bahijhbk1h08u"]
 
 [ext_resource type="Script" path="res://AircraftBody3D.gd" id="1_wiwl6"]
 [ext_resource type="Texture2D" uid="uid://dyqwlgbqpa617" path="res://Jet/jet_jet_color.png" id="2_aifn8"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ltuoo"]
-size = Vector3(0.713927, 0.472729, 3.41113)
+[sub_resource type="Curve" id="Curve_w8gv3"]
+min_value = 1.0
+max_value = 2.0
+_data = [Vector2(0, 1), 0.0, 2.0, 0, 1, Vector2(0.5, 2), 0.0, 0.0, 0, 0, Vector2(1, 1), -2.0, 0.0, 1, 0]
+point_count = 3
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tcdqb"]
 resource_name = "Material.001"
@@ -43,14 +46,19 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_e8gqa")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_ltuoo"]
+size = Vector3(0.335144, 0.193087, 1.55294)
+
 [node name="Jet" type="RigidBody3D"]
 script = ExtResource("1_wiwl6")
+thrust_power = 1000
+drag_aoa_curve = SubResource("Curve_w8gv3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0.42491)
-shape = SubResource("BoxShape3D_ltuoo")
-
-[node name="JetExport" type="MeshInstance3D" parent="CollisionShape3D"]
-transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 0, 0, -0.62491)
+[node name="JetExport" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.5, 0, 7.5498e-08, 0, 0.5, 0, -7.5498e-08, 0, -0.5, 0, 0, 0.112455)
 mesh = SubResource("ArrayMesh_ydex0")
 skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.42491)
+shape = SubResource("BoxShape3D_ltuoo")
