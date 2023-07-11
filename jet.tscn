@@ -1,19 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bahijhbk1h08u"]
+[gd_scene load_steps=7 format=3 uid="uid://bahijhbk1h08u"]
 
-[ext_resource type="Script" path="res://AircraftBody3D.gd" id="1_wiwl6"]
-[ext_resource type="Texture2D" uid="uid://dyqwlgbqpa617" path="res://Jet/jet_jet_color.png" id="2_aifn8"]
-
-[sub_resource type="Curve" id="Curve_w8gv3"]
-min_value = 1.0
-max_value = 2.0
-_data = [Vector2(0, 1), 0.0, 2.0, 0, 1, Vector2(0.5, 2), 0.0, 0.0, 0, 0, Vector2(1, 1), -2.0, 0.0, 1, 0]
-point_count = 3
+[ext_resource type="Script" path="res://aircraft_controller/aircraft.gd" id="1_0gp80"]
+[ext_resource type="Texture2D" uid="uid://dyqwlgbqpa617" path="res://jet/jet_jet_color.png" id="2_o3qyc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tcdqb"]
 resource_name = "Material.001"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_aifn8")
+albedo_texture = ExtResource("2_o3qyc")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_e8gqa"]
@@ -49,10 +43,9 @@ shadow_mesh = SubResource("ArrayMesh_e8gqa")
 [sub_resource type="BoxShape3D" id="BoxShape3D_ltuoo"]
 size = Vector3(0.335144, 0.193087, 1.55294)
 
-[node name="Jet" type="RigidBody3D"]
-script = ExtResource("1_wiwl6")
-thrust_power = 1000
-drag_aoa_curve = SubResource("Curve_w8gv3")
+[node name="Jet" type="AnimatableBody3D"]
+sync_to_physics = false
+script = ExtResource("1_0gp80")
 
 [node name="JetExport" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.5, 0, 7.5498e-08, 0, 0.5, 0, -7.5498e-08, 0, -0.5, 0, 0, 0.112455)
