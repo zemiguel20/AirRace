@@ -5,13 +5,13 @@
 
 [node name="Root" type="Node3D"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.913545, -0.0723768, 0.400247, 0, 0.984041, 0.177944, -0.406739, 0.16256, -0.898965, 10.9806, 20.0483, -34.674)
-current = true
-fov = 90.0
-
 [node name="Jet" parent="." instance=ExtResource("1_b3ow1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.90134, 17.2928, -30.4108)
-forward_velocity = 33.1
+movement_drag = 13.6
+
+[node name="Camera3D" type="Camera3D" parent="Jet"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.107019, -2.62834)
+current = true
+fov = 90.0
 
 [node name="IslandMap" parent="." instance=ExtResource("2_bm2kr")]
