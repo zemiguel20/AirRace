@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://brai7j6rppql3"]
+[gd_scene load_steps=4 format=3 uid="uid://brai7j6rppql3"]
 
 [ext_resource type="PackedScene" uid="uid://bahijhbk1h08u" path="res://jet.tscn" id="1_b3ow1"]
 [ext_resource type="PackedScene" uid="uid://rex8v3j6we4i" path="res://outdoor_environment/outdoor_environment.tscn" id="2_bm2kr"]
+[ext_resource type="PackedScene" uid="uid://ygkj58nuct83" path="res://follow_camera.tscn" id="2_q27ke"]
 
 [node name="Root" type="Node3D"]
 
@@ -9,9 +10,7 @@
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.90134, 17.2928, -30.4108)
 movement_drag = 13.6
 
-[node name="Camera3D" type="Camera3D" parent="Jet"]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.107019, -2.62834)
-current = true
-fov = 90.0
+[node name="FollowCamera" parent="." node_paths=PackedStringArray("aircraft") instance=ExtResource("2_q27ke")]
+aircraft = NodePath("../Jet")
 
 [node name="IslandMap" parent="." instance=ExtResource("2_bm2kr")]

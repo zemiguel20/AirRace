@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://ygkj58nuct83"]
+
+[ext_resource type="Script" path="res://follow_camera.gd" id="1_4ar3v"]
+
+[node name="FollowCamera" type="Camera3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 7.90134, 17.3928, -32.9108)
+current = true
+fov = 90.0
+script = ExtResource("1_4ar3v")
