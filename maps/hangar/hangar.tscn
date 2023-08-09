@@ -1,0 +1,46 @@
+[gd_scene load_steps=3 format=3 uid="uid://df4o15fgsycyt"]
+
+[ext_resource type="PackedScene" uid="uid://23ivn7kpof22" path="res://maps/hangar/model/hangar.glb" id="1_lcbfn"]
+
+[sub_resource type="Environment" id="Environment_rsuvf"]
+ambient_light_color = Color(1, 1, 1, 1)
+
+[node name="Hangar" type="Node"]
+
+[node name="hangar_model" parent="." instance=ExtResource("1_lcbfn")]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, -0.300339, 0)
+
+[node name="CeilingLight" type="OmniLight3D" parent="hangar_model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1192, 19.6951, -24.9159)
+omni_range = 30.0
+
+[node name="CeilingLight2" type="OmniLight3D" parent="hangar_model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1192, 19.6951, 6.44852)
+omni_range = 30.0
+
+[node name="CeilingLight3" type="OmniLight3D" parent="hangar_model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.1192, 19.6951, -56.2158)
+omni_range = 30.0
+
+[node name="CeilingLight4" type="OmniLight3D" parent="hangar_model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6754, 19.6951, -56.2158)
+omni_range = 30.0
+
+[node name="CeilingLight5" type="OmniLight3D" parent="hangar_model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6754, 19.6951, -24.8557)
+omni_range = 30.0
+
+[node name="CeilingLight6" type="OmniLight3D" parent="hangar_model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6754, 19.6951, 6.35551)
+omni_range = 30.0
+
+[node name="CeilingLight7" type="OmniLight3D" parent="hangar_model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.6754, 19.6951, 37.535)
+omni_range = 30.0
+
+[node name="CeilingLight8" type="OmniLight3D" parent="hangar_model"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.021, 19.6951, 37.535)
+omni_range = 30.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rsuvf")

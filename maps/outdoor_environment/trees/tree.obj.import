@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://l52lbtnqjt5h"
+path="res://.godot/imported/tree.obj-00c5a31b0e74c6ae6dad275860a8a315.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tree.obj-00c5a31b0e74c6ae6dad275860a8a315.mesh"]
+
+source_file="res://maps/outdoor_environment/trees/tree.obj"
+dest_files=["res://.godot/imported/tree.obj-00c5a31b0e74c6ae6dad275860a8a315.mesh", "res://.godot/imported/tree.obj-00c5a31b0e74c6ae6dad275860a8a315.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

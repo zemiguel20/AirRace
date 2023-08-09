@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc6kyxwxegfrf"]
+
+[ext_resource type="PackedScene" uid="uid://rex8v3j6we4i" path="res://maps/outdoor_environment/outdoor_environment.tscn" id="1_wh0qb"]
+
+[node name="Map" type="Node"]
+
+[node name="OutdoorEnvironment" parent="." instance=ExtResource("1_wh0qb")]

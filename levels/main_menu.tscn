@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcfj3lfn8yl6e"]
+
+[ext_resource type="PackedScene" uid="uid://df4o15fgsycyt" path="res://maps/hangar/hangar.tscn" id="1_4y2lq"]
+[ext_resource type="PackedScene" uid="uid://dpvdy506mde4u" path="res://ui/ui_main_menu.tscn" id="2_3yomq"]
+
+[node name="Menu" type="Node"]
+
+[node name="Hangar" parent="." instance=ExtResource("1_4y2lq")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.858494, -0.0722761, -0.507705, 0, 0.990018, -0.140937, 0.512824, 0.120994, 0.849925, -6.57919, 0.621845, 0.391798)
+
+[node name="CameraTitleScreenPosition" type="Node3D" parent="."]
+transform = Transform3D(0.858494, -0.0722761, -0.507705, 0, 0.990018, -0.140937, 0.512824, 0.120994, 0.849925, -6.57919, 0.621845, 0.391798)
+
+[node name="CameraMenuPosition" type="Node3D" parent="."]
+transform = Transform3D(-0.960547, 0.119286, -0.251239, 0, 0.903351, 0.428902, 0.278119, 0.411981, -0.867711, -1.34691, 1.95519, -1.6579)
+
+[node name="MainMenuUI" parent="." instance=ExtResource("2_3yomq")]
