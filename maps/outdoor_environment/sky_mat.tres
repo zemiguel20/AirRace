@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=5 format=3 uid="uid://cbceraxhc2dpp"]
 
-[ext_resource type="Shader" path="res://maps/outdoor_environment/sky/sky.gdshader" id="1_hoa61"]
+[ext_resource type="Shader" path="res://maps/shared/sky.gdshader" id="1_f1rt8"]
 
 [sub_resource type="Gradient" id="Gradient_p25ll"]
 offsets = PackedFloat32Array(0.686981, 0.711911)
@@ -13,7 +13,7 @@ color_ramp = SubResource("Gradient_p25ll")
 noise = SubResource("FastNoiseLite_r4fqw")
 
 [resource]
-shader = ExtResource("1_hoa61")
+shader = ExtResource("1_f1rt8")
 shader_parameter/top_color = Color(0.45098, 0.729412, 0.92549, 1)
 shader_parameter/bottom_color = Color(0.176471, 0.396078, 0.690196, 1)
 shader_parameter/sun_scatter = Color(0.290196, 0.447059, 0.623529, 1)
