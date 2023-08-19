@@ -15,5 +15,3 @@ Plane controls sources:
 Using Outdoor Environment from [GDQuest's demos](https://github.com/gdquest-demos/godot-4-new-features)
 
 [Aircraft icon](https://www.freepik.com/icon/aeroplane_652536)
-
-"Aircraft Hangar" (https://skfb.ly/oDpsC) by jimbogies is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
