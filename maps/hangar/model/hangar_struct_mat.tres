@@ -1,0 +1,17 @@
+[gd_resource type="StandardMaterial3D" load_steps=3 format=3 uid="uid://dr6ufsup4xe41"]
+
+[ext_resource type="Texture2D" uid="uid://dq3g3y1fx0xnj" path="res://maps/hangar/model/hangar_metal_0023_roughness_2k.png" id="1_us4q1"]
+[ext_resource type="Texture2D" uid="uid://cy1sjwo7oiwy7" path="res://maps/hangar/model/hangar_metal_0023_normal_opengl_2k.png" id="2_ftxcx"]
+
+[resource]
+resource_name = "HangarMat"
+cull_mode = 2
+vertex_color_use_as_albedo = true
+albedo_color = Color(0.360784, 0.254902, 0.141176, 1)
+metallic = 0.3
+metallic_texture = ExtResource("1_us4q1")
+metallic_texture_channel = 2
+roughness_texture = ExtResource("1_us4q1")
+roughness_texture_channel = 1
+normal_enabled = true
+normal_texture = ExtResource("2_ftxcx")

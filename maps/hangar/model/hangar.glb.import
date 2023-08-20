@@ -33,6 +33,18 @@ _subresources={
 "Floor": {
 "use_external/enabled": true,
 "use_external/path": "res://maps/hangar/model/floor_mat.tres"
+},
+"HangarMat": {
+"use_external/enabled": true,
+"use_external/path": "res://maps/hangar/model/HangarMat.tres"
+},
+"Lamp": {
+"use_external/enabled": true,
+"use_external/path": "res://maps/hangar/model/Lamp.tres"
+},
+"Metal": {
+"use_external/enabled": true,
+"use_external/path": "res://maps/hangar/model/Metal.tres"
 }
 }
 }
