@@ -32,7 +32,7 @@ _subresources={
 "materials": {
 "Floor": {
 "use_external/enabled": true,
-"use_external/path": "res://maps/hangar/floor_mat.tres"
+"use_external/path": "res://maps/hangar/model/floor_mat.tres"
 }
 }
 }

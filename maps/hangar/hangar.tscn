@@ -1,15 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://df4o15fgsycyt"]
+[gd_scene load_steps=9 format=3 uid="uid://df4o15fgsycyt"]
 
 [ext_resource type="PackedScene" uid="uid://cqudd0wxgsk8c" path="res://maps/hangar/model/hangar.glb" id="1_7vjj6"]
-[ext_resource type="Material" uid="uid://o4183tf460aq" path="res://maps/hangar/hangar_sky_mat.tres" id="1_mwt1n"]
-
-[sub_resource type="Sky" id="Sky_tsa00"]
-sky_material = ExtResource("1_mwt1n")
-
-[sub_resource type="Environment" id="Environment_rsuvf"]
-background_mode = 2
-sky = SubResource("Sky_tsa00")
-volumetric_fog_length = 10.0
+[ext_resource type="Environment" uid="uid://bsrjij22w7amo" path="res://maps/hangar/hangar_env.tres" id="1_jb2to"]
 
 [sub_resource type="Gradient" id="Gradient_oxkia"]
 colors = PackedColorArray(0.0745098, 0.427451, 0.0823529, 1, 0.254902, 0.596078, 0.0392157, 1)
@@ -42,7 +34,7 @@ item/0/navigation_layers = 1
 [node name="Hangar" type="Node"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_rsuvf")
+environment = ExtResource("1_jb2to")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.766256, 0.194066, -0.612528, -0.171827, 0.980469, 0.0956887, 0.619134, 0.0319271, 0.784636, 0, 6.78873, 0)

@@ -1,9 +1,9 @@
 [gd_resource type="Environment" load_steps=3 format=3 uid="uid://c2h4ojpjajlme"]
 
-[ext_resource type="Material" uid="uid://cbceraxhc2dpp" path="res://maps/outdoor_environment/sky_mat.tres" id="1_gwecl"]
+[ext_resource type="Material" uid="uid://cbceraxhc2dpp" path="res://maps/outdoor_environment/sky_mat.tres" id="1_na25l"]
 
 [sub_resource type="Sky" id="Sky_6exh6"]
-sky_material = ExtResource("1_gwecl")
+sky_material = ExtResource("1_na25l")
 
 [resource]
 background_mode = 2

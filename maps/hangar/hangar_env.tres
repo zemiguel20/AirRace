@@ -1,0 +1,15 @@
+[gd_resource type="Environment" load_steps=3 format=3 uid="uid://bsrjij22w7amo"]
+
+[ext_resource type="Material" uid="uid://o4183tf460aq" path="res://maps/hangar/hangar_sky_mat.tres" id="1_j2nfl"]
+
+[sub_resource type="Sky" id="Sky_tsa00"]
+sky_material = ExtResource("1_j2nfl")
+
+[resource]
+background_mode = 2
+sky = SubResource("Sky_tsa00")
+fog_density = 0.0005
+fog_sky_affect = 0.0
+fog_height = 0.5
+fog_height_density = 0.25
+volumetric_fog_length = 10.0
