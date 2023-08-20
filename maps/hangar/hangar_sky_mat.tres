@@ -14,8 +14,8 @@ noise = SubResource("FastNoiseLite_r4fqw")
 
 [resource]
 shader = ExtResource("1_ie22o")
-shader_parameter/top_color = Color(0.839216, 0.721569, 0.2, 1)
-shader_parameter/bottom_color = Color(0.341176, 0.2, 0.12549, 1)
+shader_parameter/top_color = Color(0.839216, 0.415686, 0.2, 1)
+shader_parameter/bottom_color = Color(0.239216, 0.0470588, 0, 1)
 shader_parameter/sun_scatter = Color(0.678431, 0.168627, 0, 1)
 shader_parameter/star_stength = 0.0
 shader_parameter/clouds_tint = Color(0.321569, 0.192157, 0, 1)

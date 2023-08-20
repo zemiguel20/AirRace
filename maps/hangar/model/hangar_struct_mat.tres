@@ -7,7 +7,7 @@
 resource_name = "HangarMat"
 cull_mode = 2
 vertex_color_use_as_albedo = true
-albedo_color = Color(0.360784, 0.254902, 0.141176, 1)
+albedo_color = Color(0.478431, 0.478431, 0.478431, 1)
 metallic = 0.3
 metallic_texture = ExtResource("1_us4q1")
 metallic_texture_channel = 2

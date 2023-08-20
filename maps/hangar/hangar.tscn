@@ -38,46 +38,58 @@ environment = ExtResource("1_jb2to")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.766256, 0.194066, -0.612528, -0.171827, 0.980469, 0.0956887, 0.619134, 0.0319271, 0.784636, 0, 6.78873, 0)
-light_color = Color(1, 0.670588, 0.290196, 1)
+light_color = Color(1, 0.537255, 0.129412, 1)
 shadow_enabled = true
 
 [node name="hangar" parent="." instance=ExtResource("1_7vjj6")]
 
-[node name="CeilingLight" type="OmniLight3D" parent="hangar"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.09548, 11.8266, -0.0197559)
-light_color = Color(1, 0.964706, 0.831373, 1)
+[node name="CeilingLight" type="SpotLight3D" parent="hangar"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.09548, 12.9993, -0.0197559)
+light_color = Color(1, 0.980392, 0.909804, 1)
 light_energy = 7.0
-omni_range = 15.0
+spot_range = 30.0
+spot_attenuation = 0.7
+spot_angle = 50.0
 
-[node name="CeilingLight2" type="OmniLight3D" parent="hangar"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.15055, 11.8266, -0.0197559)
-light_color = Color(1, 0.964706, 0.831373, 1)
+[node name="CeilingLight2" type="SpotLight3D" parent="hangar"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.15055, 12.9993, -0.0197559)
+light_color = Color(1, 0.980392, 0.909804, 1)
 light_energy = 7.0
-omni_range = 15.0
+spot_range = 30.0
+spot_attenuation = 0.7
+spot_angle = 50.0
 
-[node name="CeilingLight3" type="OmniLight3D" parent="hangar"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.10072, 11.8266, 13.0868)
-light_color = Color(1, 0.964706, 0.831373, 1)
+[node name="CeilingLight3" type="SpotLight3D" parent="hangar"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.10072, 12.9993, 13.0868)
+light_color = Color(1, 0.980392, 0.909804, 1)
 light_energy = 7.0
-omni_range = 15.0
+spot_range = 30.0
+spot_attenuation = 0.7
+spot_angle = 50.0
 
-[node name="CeilingLight4" type="OmniLight3D" parent="hangar"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.02021, 11.8266, 13.0868)
-light_color = Color(1, 0.964706, 0.831373, 1)
+[node name="CeilingLight4" type="SpotLight3D" parent="hangar"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.02021, 12.9993, 13.0868)
+light_color = Color(1, 0.980392, 0.909804, 1)
 light_energy = 7.0
-omni_range = 15.0
+spot_range = 30.0
+spot_attenuation = 0.7
+spot_angle = 50.0
 
-[node name="CeilingLight5" type="OmniLight3D" parent="hangar"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.15055, 11.8266, -13.1861)
-light_color = Color(1, 0.964706, 0.831373, 1)
+[node name="CeilingLight5" type="SpotLight3D" parent="hangar"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 7.15055, 12.9993, -13.1861)
+light_color = Color(1, 0.980392, 0.909804, 1)
 light_energy = 7.0
-omni_range = 15.0
+spot_range = 30.0
+spot_attenuation = 0.7
+spot_angle = 50.0
 
-[node name="CeilingLight6" type="OmniLight3D" parent="hangar"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.08038, 11.8266, -13.0823)
-light_color = Color(1, 0.964706, 0.831373, 1)
+[node name="CeilingLight6" type="SpotLight3D" parent="hangar"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -7.08038, 12.9993, -13.0823)
+light_color = Color(1, 0.980392, 0.909804, 1)
 light_energy = 7.0
-omni_range = 15.0
+spot_range = 30.0
+spot_attenuation = 0.7
+spot_angle = 50.0
 
 [node name="Grass" type="GridMap" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
