@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://df4o15fgsycyt"]
+[gd_scene load_steps=10 format=3 uid="uid://df4o15fgsycyt"]
 
 [ext_resource type="PackedScene" uid="uid://cqudd0wxgsk8c" path="res://maps/hangar/model/hangar.glb" id="1_7vjj6"]
 [ext_resource type="Environment" uid="uid://bsrjij22w7amo" path="res://maps/hangar/hangar_env.tres" id="1_jb2to"]
+[ext_resource type="Texture2D" uid="uid://5ax7qocqg4jf" path="res://ui/airrace_logo.png" id="3_6m67k"]
 
 [sub_resource type="Gradient" id="Gradient_oxkia"]
 colors = PackedColorArray(0.0745098, 0.427451, 0.0823529, 1, 0.254902, 0.596078, 0.0392157, 1)
@@ -92,6 +93,13 @@ light_energy = 7.0
 spot_range = 30.0
 spot_attenuation = 0.7
 spot_angle = 50.0
+
+[node name="GameLogo" type="Decal" parent="hangar"]
+transform = Transform3D(7.45, 0, 0, 0, -3.2565e-07, -7.45, 0, 7.45, -3.2565e-07, 0, 5.176, -19.6558)
+size = Vector3(1.58, 0.05, 1)
+texture_albedo = ExtResource("3_6m67k")
+upper_fade = 0.01
+lower_fade = 0.01
 
 [node name="Grass" type="GridMap" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
