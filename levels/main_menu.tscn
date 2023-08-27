@@ -9,7 +9,7 @@
 [node name="Hangar" parent="." instance=ExtResource("1_4y2lq")]
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(-0.546801, 0.136056, 0.826134, 0, 0.986708, -0.162501, -0.837263, -0.0888555, -0.539533, 13.9997, 3.80691, -7.74231)
+transform = Transform3D(-0.823114, 0.010922, 0.567772, 0, 0.999815, -0.019233, -0.567877, -0.0158309, -0.822961, 13.152, 4.09199, -5.25884)
 
 [node name="CameraTitleScreenPosition" type="Node3D" parent="."]
 transform = Transform3D(0.858494, -0.0722761, -0.507705, 0, 0.990018, -0.140937, 0.512824, 0.120994, 0.849925, -6.57919, 0.621845, 0.391798)
