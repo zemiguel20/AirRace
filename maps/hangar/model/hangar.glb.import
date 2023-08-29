@@ -36,15 +36,15 @@ _subresources={
 },
 "HangarMat": {
 "use_external/enabled": true,
-"use_external/path": "res://maps/hangar/model/HangarMat.tres"
+"use_external/path": "res://maps/hangar/model/hangar_struct_mat.tres"
 },
 "Lamp": {
 "use_external/enabled": true,
-"use_external/path": "res://maps/hangar/model/Lamp.tres"
+"use_external/path": "res://maps/hangar/model/lamp_mat.tres"
 },
 "Metal": {
 "use_external/enabled": true,
-"use_external/path": "res://maps/hangar/model/Metal.tres"
+"use_external/path": "res://maps/hangar/model/metal_mat.tres"
 }
 }
 }
