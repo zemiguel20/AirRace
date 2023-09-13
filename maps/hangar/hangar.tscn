@@ -52,49 +52,55 @@ transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, -7.09548, 12.9993, -0.0197559)
 light_color = Color(1, 0.980392, 0.909804, 1)
 light_energy = 2.0
-spot_range = 14.0
-spot_attenuation = 0.5
-spot_angle = 60.0
+shadow_enabled = true
+spot_range = 10.5
+spot_attenuation = 0.0106722
+spot_angle = 70.0
 
 [node name="CeilingLight2" type="SpotLight3D" parent="hangar"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 7.15055, 12.9993, -0.0197559)
 light_color = Color(1, 0.980392, 0.909804, 1)
 light_energy = 2.0
-spot_range = 14.0
-spot_attenuation = 0.5
-spot_angle = 60.0
+shadow_enabled = true
+spot_range = 10.5
+spot_attenuation = 0.0106722
+spot_angle = 70.0
 
 [node name="CeilingLight3" type="SpotLight3D" parent="hangar"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 7.10072, 12.9993, 13.0868)
 light_color = Color(1, 0.980392, 0.909804, 1)
 light_energy = 2.0
-spot_range = 14.0
-spot_attenuation = 0.5
-spot_angle = 60.0
+shadow_enabled = true
+spot_range = 10.5
+spot_attenuation = 0.0106722
+spot_angle = 70.0
 
 [node name="CeilingLight4" type="SpotLight3D" parent="hangar"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, -7.02021, 12.9993, 13.0868)
 light_color = Color(1, 0.980392, 0.909804, 1)
 light_energy = 2.0
-spot_range = 14.0
-spot_attenuation = 0.5
-spot_angle = 60.0
+shadow_enabled = true
+spot_range = 10.5
+spot_attenuation = 0.0106722
+spot_angle = 70.0
 
 [node name="CeilingLight5" type="SpotLight3D" parent="hangar"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, 7.15055, 12.9993, -13.1861)
 light_color = Color(1, 0.980392, 0.909804, 1)
 light_energy = 2.0
-spot_range = 14.0
-spot_attenuation = 0.5
-spot_angle = 60.0
+shadow_enabled = true
+spot_range = 10.5
+spot_attenuation = 0.0106722
+spot_angle = 70.0
 
 [node name="CeilingLight6" type="SpotLight3D" parent="hangar"]
 transform = Transform3D(2, 0, 0, 0, -8.74228e-08, 2, 0, -2, -8.74228e-08, -7.08038, 12.9993, -13.0823)
 light_color = Color(1, 0.980392, 0.909804, 1)
 light_energy = 2.0
-spot_range = 14.0
-spot_attenuation = 0.5
-spot_angle = 60.0
+shadow_enabled = true
+spot_range = 10.5
+spot_attenuation = 0.0106722
+spot_angle = 70.0
 
 [node name="GameLogo" type="Decal" parent="hangar"]
 transform = Transform3D(7.45, 0, 0, 0, -3.2565e-07, -7.45, 0, 7.45, -3.2565e-07, 0, 5.176, -19.6558)
