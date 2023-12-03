@@ -1,14 +1,10 @@
 extends CanvasLayer
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_title_screen_transition_play()
+	$TitleScreen.activate()
+	$MainMenu.visible = false
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-func _title_screen_transition_play():
-	$AnimationPlayer.play("title_screen_fade_in")
+func _on_title_screen_exited():
+	$TitleScreen.visible = false
+	$MainMenu.visible = true

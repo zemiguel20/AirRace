@@ -1,14 +1,39 @@
-[gd_scene load_steps=7 format=3 uid="uid://dpvdy506mde4u"]
+[gd_scene load_steps=8 format=3 uid="uid://dpvdy506mde4u"]
 
 [ext_resource type="Texture2D" uid="uid://5ax7qocqg4jf" path="res://ui/airrace_logo.png" id="1_pwub1"]
 [ext_resource type="Script" path="res://ui/UI.gd" id="1_qxep5"]
+[ext_resource type="Script" path="res://ui/TitleScreen.gd" id="2_cqhx2"]
 
 [sub_resource type="Animation" id="Animation_gv52f"]
 length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TitleScreen/GameLogo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TitleScreen/PressAnyButtonLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_7vsgw"]
 resource_name = "logo_fade_in"
-length = 3.0
+length = 2.1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -47,12 +72,48 @@ font_color = Color(0.988235, 0.447059, 0.0235294, 1)
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_qxep5")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="TitleScreen" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_cqhx2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TitleScreen"]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_hcbru")
 }
 
-[node name="TitleScreen" type="Control" parent="."]
+[node name="GameLogo" type="TextureRect" parent="TitleScreen"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 100.0
+offset_bottom = 583.0
+grow_horizontal = 2
+texture = ExtResource("1_pwub1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PressAnyButtonLabel" type="Label" parent="TitleScreen"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -149.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press any button to start"
+label_settings = SubResource("LabelSettings_ghdfh")
+horizontal_alignment = 1
+
+[node name="MainMenu" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -60,33 +121,33 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PressAnyButtonLabel" type="Label" parent="TitleScreen"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu"]
 layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
-anchor_right = 0.5
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -208.0
-offset_top = -200.0
-offset_right = 210.0
-offset_bottom = -148.0
-grow_horizontal = 2
+offset_left = -463.0
+offset_top = -313.0
+offset_right = -98.0
+offset_bottom = -98.0
+grow_horizontal = 0
 grow_vertical = 0
-text = "Press any button to start"
-label_settings = SubResource("LabelSettings_ghdfh")
-horizontal_alignment = 1
 
-[node name="GameLogo" type="TextureRect" parent="TitleScreen"]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -408.0
-offset_top = 80.0
-offset_right = 3688.0
-offset_bottom = 2670.0
-grow_horizontal = 2
-scale = Vector2(0.2, 0.2)
-size_flags_vertical = 0
-texture = ExtResource("1_pwub1")
+[node name="PlayButton" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Play"
+
+[node name="SettingsButton" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Settings"
+
+[node name="QuitButton" type="Button" parent="MainMenu/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Quit"
+
+[connection signal="exited" from="TitleScreen" to="." method="_on_title_screen_exited"]
