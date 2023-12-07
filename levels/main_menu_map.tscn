@@ -1,0 +1,83 @@
+[gd_scene load_steps=7 format=3 uid="uid://cb2lawnmthfy7"]
+
+[ext_resource type="PackedScene" uid="uid://df4o15fgsycyt" path="res://maps/hangar/hangar.tscn" id="1_8mmxd"]
+[ext_resource type="Script" path="res://levels/main_menu_map.gd" id="1_dvhfv"]
+[ext_resource type="PackedScene" uid="uid://bahijhbk1h08u" path="res://jet.tscn" id="2_2jwa0"]
+
+[sub_resource type="Animation" id="Animation_3xvg4"]
+resource_name = "main_menu_camera_transition"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector3(6.15177, 1.19806, -3.43457), Vector3(-0.667881, 2.44585, 5.08721)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.5, 1),
+"update": 0,
+"values": [Vector3(0, 2.57361, 0), Vector3(-0.24355, -0.453773, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_u20fe"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(6.15177, 1.19806, -3.43457)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2.57361, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pug4l"]
+_data = {
+"RESET": SubResource("Animation_u20fe"),
+"main_menu_camera_transition": SubResource("Animation_3xvg4")
+}
+
+[node name="MainMenuMap" type="Node"]
+script = ExtResource("1_dvhfv")
+
+[node name="Hangar" parent="." instance=ExtResource("1_8mmxd")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.842988, 0, 0.537933, 0, 1, 0, -0.537933, 0, -0.842988, 6.15177, 1.19806, -3.43457)
+
+[node name="Jet" parent="." instance=ExtResource("2_2jwa0")]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.195058, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pug4l")
+}
