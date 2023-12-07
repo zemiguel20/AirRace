@@ -114,6 +114,7 @@ label_settings = SubResource("LabelSettings_ghdfh")
 horizontal_alignment = 1
 
 [node name="MainMenu" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -150,4 +151,26 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Quit"
 
+[node name="PlayMenu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SettingsMenu" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [connection signal="exited" from="TitleScreen" to="." method="_on_title_screen_exited"]
+[connection signal="exited" from="TitleScreen" to="MainMenu" method="show"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/PlayButton" to="MainMenu" method="hide"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/PlayButton" to="PlayMenu" method="show"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/SettingsButton" to="MainMenu" method="hide"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/SettingsButton" to="SettingsMenu" method="show"]
+[connection signal="pressed" from="MainMenu/VBoxContainer/QuitButton" to="." method="_quit_pressed"]

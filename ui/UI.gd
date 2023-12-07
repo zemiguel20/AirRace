@@ -2,12 +2,15 @@ extends CanvasLayer
 
 signal title_screen_exited
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$TitleScreen.activate()
-	$MainMenu.visible = false
+	$TitleScreen.play()
+
 
 func _on_title_screen_exited():
-	$TitleScreen.visible = false
-	$MainMenu.visible = true
 	title_screen_exited.emit()
+
+
+func _quit_pressed():
+	get_tree().quit()
