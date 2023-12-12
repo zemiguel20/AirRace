@@ -1,12 +1,27 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcfj3lfn8yl6e"]
+[gd_scene load_steps=6 format=3 uid="uid://bcfj3lfn8yl6e"]
 
-[ext_resource type="PackedScene" uid="uid://dpvdy506mde4u" path="res://ui/UI.tscn" id="2_d8xge"]
-[ext_resource type="PackedScene" uid="uid://cb2lawnmthfy7" path="res://levels/main_menu_map.tscn" id="2_vdyfd"]
+[ext_resource type="Script" path="res://main.gd" id="1_rph7m"]
+[ext_resource type="PackedScene" uid="uid://cw2oy0prnugmg" path="res://ui/main_menu/main_menu.tscn" id="2_0tpu0"]
+[ext_resource type="PackedScene" uid="uid://dejvw6nlvd6ba" path="res://ui/title_screen/title_screen.tscn" id="2_cu0tx"]
+[ext_resource type="PackedScene" uid="uid://cb2lawnmthfy7" path="res://levels/lobby/lobby.tscn" id="4_2sivx"]
+[ext_resource type="PackedScene" uid="uid://bahijhbk1h08u" path="res://jet.tscn" id="5_p5ey4"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_rph7m")
 
-[node name="UI" parent="." instance=ExtResource("2_d8xge")]
+[node name="TitleScreen" parent="." instance=ExtResource("2_cu0tx")]
 
-[node name="MainMenuMap" parent="." instance=ExtResource("2_vdyfd")]
+[node name="MainMenu" parent="." instance=ExtResource("2_0tpu0")]
+visible = false
 
-[connection signal="title_screen_exited" from="UI" to="MainMenuMap" method="_on_ui_title_screen_exited"]
+[node name="Jet" parent="." instance=ExtResource("5_p5ey4")]
+process_mode = 4
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.195058, 0)
+
+[node name="Lobby" parent="." instance=ExtResource("4_2sivx")]
+
+[connection signal="exited" from="TitleScreen" to="." method="_on_title_screen_exited"]
+[connection signal="exited" from="TitleScreen" to="Lobby" method="move_camera_to_plane"]
+[connection signal="play_pressed" from="MainMenu" to="." method="_on_main_menu_play_pressed"]
+[connection signal="quit_pressed" from="MainMenu" to="." method="_on_main_menu_quit_pressed"]
+[connection signal="settings_pressed" from="MainMenu" to="." method="_on_main_menu_settings_pressed"]

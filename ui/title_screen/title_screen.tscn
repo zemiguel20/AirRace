@@ -1,0 +1,100 @@
+[gd_scene load_steps=7 format=3 uid="uid://dejvw6nlvd6ba"]
+
+[ext_resource type="Script" path="res://ui/title_screen/title_screen.gd" id="1_hl66b"]
+[ext_resource type="Texture2D" uid="uid://5ax7qocqg4jf" path="res://ui/airrace_logo.png" id="2_8w7ey"]
+
+[sub_resource type="Animation" id="Animation_gv52f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameLogo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PressAnyButtonLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_7vsgw"]
+resource_name = "logo_fade_in"
+length = 2.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("GameLogo:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PressAnyButtonLabel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hcbru"]
+_data = {
+"RESET": SubResource("Animation_gv52f"),
+"title_screen_fade_in": SubResource("Animation_7vsgw")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_e8tl1"]
+font_size = 35
+font_color = Color(0.988235, 0.447059, 0.0235294, 1)
+
+[node name="TitleScreen" type="CanvasLayer"]
+script = ExtResource("1_hl66b")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hcbru")
+}
+
+[node name="GameLogo" type="TextureRect" parent="."]
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 100.0
+offset_bottom = 583.0
+grow_horizontal = 2
+texture = ExtResource("2_8w7ey")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="PressAnyButtonLabel" type="Label" parent="."]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -149.0
+offset_bottom = -100.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Press any button to start"
+label_settings = SubResource("LabelSettings_e8tl1")
+horizontal_alignment = 1

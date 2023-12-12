@@ -1,4 +1,5 @@
 extends Node
 
-func _on_ui_title_screen_exited():
+
+func move_camera_to_plane():
 	$AnimationPlayer.play("main_menu_camera_transition")
