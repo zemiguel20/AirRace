@@ -24,6 +24,14 @@ window/size/viewport_height=800
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[file_customization]
+
+folder_colors={
+"res://levels/": "yellow",
+"res://maps/": "red",
+"res://ui/": "green"
+}
+
 [gui]
 
 theme/custom="res://ui/theme.tres"
