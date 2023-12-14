@@ -17,7 +17,8 @@ func _on_title_screen_exited():
 
 
 func _on_main_menu_play_pressed():
-	pass # Replace with function body.
+	$MainMenu.hide()
+	$PlayMenu.show()
 
 
 func _on_main_menu_settings_pressed():
@@ -26,3 +27,8 @@ func _on_main_menu_settings_pressed():
 
 func _on_main_menu_quit_pressed():
 	get_tree().quit()
+
+
+func _on_play_menu_back_pressed():
+	$PlayMenu.hide()
+	$MainMenu.show()
