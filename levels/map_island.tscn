@@ -5,3 +5,6 @@
 [node name="Map" type="Node"]
 
 [node name="OutdoorEnvironment" parent="." instance=ExtResource("1_wh0qb")]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.830033, -0.365142, 0.421563, 0, 0.755878, 0.654713, -0.557714, -0.543433, 0.627404, 26.2529, 37.7903, 18.3045)

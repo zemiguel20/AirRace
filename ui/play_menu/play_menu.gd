@@ -2,8 +2,9 @@ extends CanvasLayer
 
 
 signal back_pressed
-signal play_pressed
+signal play_pressed(selected_level:LevelData)
 
+var _selected_level: LevelData
 
 func _on_scroll_container_resized():
 	# WORKAROUND to ScrollContainer content not expanding
@@ -14,8 +15,15 @@ func _on_scroll_container_resized():
 
 
 func _on_back_button_pressed():
+	print("Back pressed")
 	back_pressed.emit()
 
 
 func _on_play_button_pressed():
-	play_pressed.emit()
+	print("Play pressed")
+	play_pressed.emit(_selected_level)
+
+
+func _on_map_button_selected(level: LevelData):
+	_selected_level = level
+	$Panel/PlayButton.disabled = false

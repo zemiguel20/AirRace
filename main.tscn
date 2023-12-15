@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bcfj3lfn8yl6e"]
+[gd_scene load_steps=8 format=3 uid="uid://bcfj3lfn8yl6e"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_rph7m"]
 [ext_resource type="PackedScene" uid="uid://cw2oy0prnugmg" path="res://ui/main_menu/main_menu.tscn" id="2_0tpu0"]
 [ext_resource type="PackedScene" uid="uid://dejvw6nlvd6ba" path="res://ui/title_screen/title_screen.tscn" id="2_cu0tx"]
 [ext_resource type="PackedScene" uid="uid://cb2lawnmthfy7" path="res://levels/lobby/lobby.tscn" id="4_2sivx"]
 [ext_resource type="PackedScene" uid="uid://5ijv1pynbem1" path="res://ui/play_menu/play_menu.tscn" id="4_bipm2"]
+[ext_resource type="PackedScene" uid="uid://wnbhdbijtrfl" path="res://ui/loading_screen.tscn" id="5_dcsm4"]
 [ext_resource type="PackedScene" uid="uid://bahijhbk1h08u" path="res://jet.tscn" id="5_p5ey4"]
 
 [node name="Main" type="Node"]
@@ -16,6 +17,9 @@ script = ExtResource("1_rph7m")
 visible = false
 
 [node name="PlayMenu" parent="." instance=ExtResource("4_bipm2")]
+visible = false
+
+[node name="LoadingScreen" parent="." instance=ExtResource("5_dcsm4")]
 visible = false
 
 [node name="Jet" parent="." instance=ExtResource("5_p5ey4")]
@@ -30,3 +34,4 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.195058, 0)
 [connection signal="quit_pressed" from="MainMenu" to="." method="_on_main_menu_quit_pressed"]
 [connection signal="settings_pressed" from="MainMenu" to="." method="_on_main_menu_settings_pressed"]
 [connection signal="back_pressed" from="PlayMenu" to="." method="_on_play_menu_back_pressed"]
+[connection signal="play_pressed" from="PlayMenu" to="." method="_on_play_menu_play_pressed"]

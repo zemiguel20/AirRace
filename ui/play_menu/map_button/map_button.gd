@@ -2,6 +2,8 @@ extends Button
 
 @export var level_data: LevelData
 
+signal selected(level: LevelData)
+
 
 func _ready():
 	if level_data != null:
@@ -24,3 +26,7 @@ func set_selected(state:bool):
 		$SelectedBackground.show()
 	else:
 		$SelectedBackground.hide()
+
+
+func _on_pressed():
+	selected.emit(level_data)

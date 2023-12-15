@@ -32,3 +32,12 @@ func _on_main_menu_quit_pressed():
 func _on_play_menu_back_pressed():
 	$PlayMenu.hide()
 	$MainMenu.show()
+
+
+func _on_play_menu_play_pressed(selected_level: LevelData):
+	$PlayMenu.hide()
+	$LoadingScreen.show()
+	$Lobby.queue_free()
+	var level_instance = selected_level.level_scene.instantiate()
+	add_child(level_instance)
+	$LoadingScreen.hide()

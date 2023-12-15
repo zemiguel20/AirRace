@@ -60,6 +60,7 @@ offset_right = -51.0
 offset_bottom = -36.0
 grow_horizontal = 0
 grow_vertical = 0
+disabled = true
 text = "Play"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="Panel"]
@@ -92,3 +93,5 @@ level_data = ExtResource("3_cxcv0")
 [connection signal="pressed" from="Panel/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Panel/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="resized" from="Panel/ScrollContainer" to="." method="_on_scroll_container_resized"]
+[connection signal="selected" from="Panel/ScrollContainer/VBoxContainer/MapButton" to="." method="_on_map_button_selected"]
+[connection signal="selected" from="Panel/ScrollContainer/VBoxContainer/MapButton2" to="." method="_on_map_button_selected"]
