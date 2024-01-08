@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://b4akgw33q5n08"]
+
+[ext_resource type="Script" path="res://ui/shared/base_button.gd" id="1_awbfo"]
+
+[node name="BaseButton" type="Button"]
+offset_right = 129.0
+offset_bottom = 27.0
+text = "Placeholder Text"
+script = ExtResource("1_awbfo")
+
+[connection signal="focus_entered" from="." to="." method="_grow"]
+[connection signal="focus_exited" from="." to="." method="_shrink"]
+[connection signal="mouse_entered" from="." to="." method="_grow"]
+[connection signal="mouse_exited" from="." to="." method="_shrink"]

@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2rauee3tqbwy"]
+
+[ext_resource type="ButtonGroup" uid="uid://cx2xd0xsl8wjh" path="res://ui/play_menu/button_group_levels.tres" id="1_wcwa6"]
+[ext_resource type="Script" path="res://ui/play_menu/level_button.gd" id="2_ai5tp"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0fidr"]
+
+[node name="LevelButton" type="Button"]
+custom_minimum_size = Vector2(345, 86)
+offset_right = 10.0
+offset_bottom = 10.0
+theme_override_font_sizes/font_size = 16
+toggle_mode = true
+button_group = ExtResource("1_wcwa6")
+text = "Test"
+icon = SubResource("GradientTexture2D_0fidr")
+alignment = 0
+expand_icon = true
+script = ExtResource("2_ai5tp")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -118.0
+offset_top = 7.0
+offset_right = -6.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="BestTimeLabel" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "Best Time"
+
+[node name="BestTime" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "0:00.00"
+horizontal_alignment = 2

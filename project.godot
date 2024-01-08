@@ -34,7 +34,7 @@ folder_colors={
 
 [gui]
 
-theme/custom="res://ui/theme.tres"
+theme/custom="res://ui/shared/theme.tres"
 
 [input]
 

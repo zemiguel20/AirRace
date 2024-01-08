@@ -1,8 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://5ijv1pynbem1"]
+[gd_scene load_steps=11 format=3 uid="uid://5ijv1pynbem1"]
 
-[ext_resource type="PackedScene" uid="uid://1pgodd1iwkfl" path="res://ui/play_menu/map_button/map_button.tscn" id="1_e3poh"]
 [ext_resource type="Script" path="res://ui/play_menu/play_menu.gd" id="1_jiyyk"]
+[ext_resource type="StyleBox" uid="uid://bwhk54bbimhag" path="res://ui/shared/style_panel.tres" id="2_ea2ku"]
+[ext_resource type="PackedScene" uid="uid://b4akgw33q5n08" path="res://ui/shared/base_button.tscn" id="3_5y0ee"]
 [ext_resource type="Resource" uid="uid://d0hxt186ylf3m" path="res://levels/test_level_data.tres" id="3_cxcv0"]
+[ext_resource type="Texture2D" uid="uid://di6vs1fxkyj4k" path="res://icon.svg" id="4_jdj6j"]
+[ext_resource type="ButtonGroup" uid="uid://cx2xd0xsl8wjh" path="res://ui/play_menu/button_group_levels.tres" id="5_cml8f"]
+[ext_resource type="PackedScene" uid="uid://c2rauee3tqbwy" path="res://ui/play_menu/level_button.tscn" id="5_exixf"]
+[ext_resource type="StyleBox" uid="uid://lded44grux2v" path="res://ui/play_menu/style_button_play.tres" id="5_imgug"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ni0wf"]
 font_size = 70
@@ -13,6 +18,7 @@ bg_color = Color(0, 0, 0, 0.196078)
 
 [node name="PlayMenu" type="CanvasLayer"]
 script = ExtResource("1_jiyyk")
+button_group = ExtResource("5_cml8f")
 
 [node name="Panel" type="Panel" parent="."]
 anchors_preset = 11
@@ -22,6 +28,7 @@ anchor_bottom = 1.0
 offset_left = -543.0
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_styles/panel = ExtResource("2_ea2ku")
 
 [node name="Title" type="Label" parent="Panel"]
 layout_mode = 2
@@ -35,31 +42,29 @@ text = "Maps"
 label_settings = SubResource("LabelSettings_ni0wf")
 uppercase = true
 
-[node name="BackButton" type="Button" parent="Panel"]
+[node name="BackButton" parent="Panel" instance=ExtResource("3_5y0ee")]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -146.0
-offset_top = 63.0
-offset_right = -53.0
-offset_bottom = 103.0
+offset_left = -147.0
+offset_top = 64.0
+offset_right = -54.0
+offset_bottom = 107.0
 grow_horizontal = 0
 text = "Back"
 
-[node name="PlayButton" type="Button" parent="Panel"]
+[node name="PlayButton" parent="Panel" instance=ExtResource("3_5y0ee")]
 layout_mode = 1
-anchors_preset = 3
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
 offset_left = -189.0
-offset_top = -105.0
-offset_right = -51.0
-offset_bottom = -36.0
+offset_top = 694.0
+offset_right = -53.0
+offset_bottom = 764.0
 grow_horizontal = 0
-grow_vertical = 0
+theme_override_styles/normal = ExtResource("5_imgug")
 disabled = true
 text = "Play"
 
@@ -82,16 +87,18 @@ horizontal_scroll_mode = 0
 layout_mode = 2
 theme_override_constants/separation = 8
 
-[node name="MapButton" parent="Panel/ScrollContainer/VBoxContainer" instance=ExtResource("1_e3poh")]
+[node name="MapButton1" parent="Panel/ScrollContainer/VBoxContainer" instance=ExtResource("5_exixf")]
 layout_mode = 2
+text = "Island"
+icon = ExtResource("4_jdj6j")
 level_data = ExtResource("3_cxcv0")
 
-[node name="MapButton2" parent="Panel/ScrollContainer/VBoxContainer" instance=ExtResource("1_e3poh")]
+[node name="MapButton2" parent="Panel/ScrollContainer/VBoxContainer" instance=ExtResource("5_exixf")]
 layout_mode = 2
+text = "Island"
+icon = ExtResource("4_jdj6j")
 level_data = ExtResource("3_cxcv0")
 
 [connection signal="pressed" from="Panel/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Panel/PlayButton" to="." method="_on_play_button_pressed"]
 [connection signal="resized" from="Panel/ScrollContainer" to="." method="_on_scroll_container_resized"]
-[connection signal="selected" from="Panel/ScrollContainer/VBoxContainer/MapButton" to="." method="_on_map_button_selected"]
-[connection signal="selected" from="Panel/ScrollContainer/VBoxContainer/MapButton2" to="." method="_on_map_button_selected"]
