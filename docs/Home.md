@@ -33,8 +33,8 @@ When the player crossed the last gate, the HUD fades away and a dark overlay fad
 Smooth transition when key pressed. Similar to Rocket League
 
 ## Play Menu
-Similar to rocket league, where the background is the car in the arena, in this case the plane on the map. The background map changes to the selected map in the map list.
-One of the options is to press a button, like C or (Y), to open plane customization, so the plane costumization is a sub panel of the Play Menu.
+Similar to rocket league, where the background is the car in the arena, in this case the plane on the map.
+One of the options is to press a button, like C or (Y), to open plane customization, so the plane costumization is a sub panel of the Play Menu OR use preset planes that the player can scroll through.
 
 ![play_menu](./play_menu_sketch.png)
 
