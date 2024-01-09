@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cb2lawnmthfy7"]
+[gd_scene load_steps=9 format=3 uid="uid://cb2lawnmthfy7"]
 
 [ext_resource type="Script" path="res://levels/lobby/lobby.gd" id="1_lru5a"]
 [ext_resource type="PackedScene" uid="uid://df4o15fgsycyt" path="res://maps/hangar/hangar.tscn" id="2_7yvky"]
+[ext_resource type="PackedScene" uid="uid://dejvw6nlvd6ba" path="res://ui/title_screen/title_screen.tscn" id="3_gxqkx"]
+[ext_resource type="PackedScene" uid="uid://cw2oy0prnugmg" path="res://ui/main_menu/main_menu.tscn" id="3_tc4pa"]
+[ext_resource type="PackedScene" uid="uid://5ijv1pynbem1" path="res://ui/play_menu/play_menu.tscn" id="4_whqqi"]
 
 [sub_resource type="Animation" id="Animation_u20fe"]
 length = 0.001
@@ -68,6 +71,14 @@ _data = {
 [node name="Lobby" type="Node"]
 script = ExtResource("1_lru5a")
 
+[node name="TitleScreen" parent="." instance=ExtResource("3_gxqkx")]
+
+[node name="MainMenu" parent="." instance=ExtResource("3_tc4pa")]
+visible = false
+
+[node name="PlayMenu" parent="." instance=ExtResource("4_whqqi")]
+visible = false
+
 [node name="Hangar" parent="." instance=ExtResource("2_7yvky")]
 
 [node name="LobbyCamera" type="Camera3D" parent="."]
@@ -79,3 +90,10 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_pug4l")
 }
+
+[connection signal="exited" from="TitleScreen" to="." method="_on_title_screen_exited"]
+[connection signal="play_pressed" from="MainMenu" to="." method="_on_main_menu_play_pressed"]
+[connection signal="quit_pressed" from="MainMenu" to="." method="_on_main_menu_quit_pressed"]
+[connection signal="settings_pressed" from="MainMenu" to="." method="_on_main_menu_settings_pressed"]
+[connection signal="back_pressed" from="PlayMenu" to="." method="_on_play_menu_back_pressed"]
+[connection signal="play_pressed" from="PlayMenu" to="." method="_on_play_menu_play_pressed"]

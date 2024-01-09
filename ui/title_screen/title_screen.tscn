@@ -66,7 +66,8 @@ _data = {
 
 [sub_resource type="LabelSettings" id="LabelSettings_e8tl1"]
 font_size = 35
-font_color = Color(0.988235, 0.447059, 0.0235294, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
 
 [node name="TitleScreen" type="CanvasLayer"]
 script = ExtResource("1_hl66b")
