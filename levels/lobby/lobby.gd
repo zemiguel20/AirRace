@@ -5,10 +5,6 @@ signal game_quit
 signal level_selected(level: LevelData)
 
 
-func move_camera_to_plane():
-	$AnimationPlayer.play("main_menu_camera_transition")
-
-
 func _on_title_screen_exited() -> void:
 	$TitleScreen.hide()
 	$MainMenu.show()
