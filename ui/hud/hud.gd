@@ -83,7 +83,7 @@ func _update_record_label():
 		return
 	
 	%RecordTime.text = _time_ms_to_string(record_time_ms)
-	%RecordTime.label_settings.font_color = Color.WHITE
+	%RecordTime.label_settings.font_color = Color.DARK_GRAY
 
 
 func _update_race_completion_label():

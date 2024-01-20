@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="32"
+   height="32"
+   viewBox="0 0 8.4666666 8.4666666"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="chrono_icon.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="11.313708"
+     inkscape:cx="16.617009"
+     inkscape:cy="9.148194"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showguides="true">
+    <sodipodi:guide
+       position="4.233333,7.5074216"
+       orientation="0,-1"
+       id="guide4"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="matrix(1.201013,0,0,1.201013,-0.75566138,-0.16963105)">
+    <circle
+       style="fill:none;stroke:#000000;stroke-width:0.977564;stroke-linecap:round;stroke-linejoin:bevel;stroke-dasharray:none"
+       id="path1"
+       cy="4.2333331"
+       cx="4.2333331"
+       r="2.4687293" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.977564;stroke-linecap:round;stroke-linejoin:bevel;stroke-dasharray:none"
+       d="M 4.2333333,4.2333331 5.1441666,3.534826"
+       id="path2"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.977564;stroke-linecap:round;stroke-linejoin:bevel;stroke-dasharray:none"
+       d="M 2.6303094,2.3558509 1.6059155,1.2758217"
+       id="path3"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.977564;stroke-linecap:round;stroke-linejoin:bevel;stroke-dasharray:none"
+       d="m 4.233333,1.7646038 -2e-7,-1.1345817"
+       id="path4"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.977564;stroke-linecap:round;stroke-linejoin:bevel;stroke-dasharray:none"
+       d="m 3.1837254,0.6300221 h 2.110913"
+       id="path5"
+       sodipodi:nodetypes="cc" />
+  </g>
+</svg>
