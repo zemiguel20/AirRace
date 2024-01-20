@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://dejvw6nlvd6ba"]
 
 [ext_resource type="Script" path="res://ui/title_screen/title_screen.gd" id="1_hl66b"]
-[ext_resource type="Texture2D" uid="uid://5ax7qocqg4jf" path="res://ui/airrace_logo.png" id="2_8w7ey"]
+[ext_resource type="Texture2D" uid="uid://5ax7qocqg4jf" path="res://misc/airrace_logo/airrace_logo.png" id="2_8w7ey"]
 
 [sub_resource type="Animation" id="Animation_gv52f"]
 length = 0.001

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dfn31jq7qhvnp"
-path="res://.godot/imported/airrace_icon.svg-8d2c498a4eadfd2c7dcfcabd8b91341e.ctex"
+uid="uid://dmeud4em3nwwx"
+path="res://.godot/imported/prototype_512x512_brown.png-1592e282d8265ce44391b1ab8c24c2cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://airrace_icon.svg"
-dest_files=["res://.godot/imported/airrace_icon.svg-8d2c498a4eadfd2c7dcfcabd8b91341e.ctex"]
+source_file="res://misc/gridbox_textures/prototype_512x512_brown.png"
+dest_files=["res://.godot/imported/prototype_512x512_brown.png-1592e282d8265ce44391b1ab8c24c2cc.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

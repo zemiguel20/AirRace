@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bppqyswfqxy3w"
-path="res://.godot/imported/prototype_512x512_green1.png-086c2b7d48ea5cf994c15a8bb51bdf61.ctex"
+uid="uid://5v3d8dgy6tye"
+path="res://.godot/imported/prototype_512x512_grey1.png-f584d684b56bafd705e2c8dfe1304359.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://levels/prototyping/gridbox_textures/prototype_512x512_green1.png"
-dest_files=["res://.godot/imported/prototype_512x512_green1.png-086c2b7d48ea5cf994c15a8bb51bdf61.ctex"]
+source_file="res://misc/gridbox_textures/prototype_512x512_grey1.png"
+dest_files=["res://.godot/imported/prototype_512x512_grey1.png-f584d684b56bafd705e2c8dfe1304359.ctex"]
 
 [params]
 
