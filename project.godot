@@ -17,6 +17,10 @@ boot_splash/bg_color=Color(0.105882, 0.105882, 0.105882, 1)
 boot_splash/image="res://bananakkkk.png"
 config/icon="res://misc/airrace_logo/airrace_icon.svg"
 
+[autoload]
+
+GameData="*res://game_data.gd"
+
 [display]
 
 window/size/viewport_width=1280

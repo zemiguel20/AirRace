@@ -83,7 +83,7 @@ visible = false
 [node name="Hangar" parent="." instance=ExtResource("2_7yvky")]
 
 [node name="LobbyCamera" type="Camera3D" parent="."]
-transform = Transform3D(-0.825585, 0.156503, 0.542141, 0, 0.960769, -0.27735, -0.564278, -0.228976, -0.793196, 6.08016, 1.03885, 1.97235)
+transform = Transform3D(-0.825583, 0.156504, 0.542144, 0, 0.960769, -0.27735, -0.564281, -0.228976, -0.793194, 6.08016, 1.03885, 1.97235)
 fov = 50.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

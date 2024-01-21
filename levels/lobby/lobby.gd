@@ -2,7 +2,7 @@ extends Node
 
 
 signal game_quit
-signal level_selected(level: LevelData)
+signal level_selected(level: PackedScene)
 
 
 func _on_title_screen_exited() -> void:
@@ -29,6 +29,5 @@ func _on_play_menu_back_pressed():
 	$MainMenu.show()
 
 
-func _on_play_menu_play_pressed(selected_level: LevelData):
-	# TODO: refactor level loading and level data
+func _on_play_menu_play_pressed(selected_level: PackedScene):
 	level_selected.emit(selected_level)

@@ -3,11 +3,11 @@
 [ext_resource type="Script" path="res://ui/play_menu/play_menu.gd" id="1_jiyyk"]
 [ext_resource type="StyleBox" uid="uid://bwhk54bbimhag" path="res://ui/shared/style_panel.tres" id="2_ea2ku"]
 [ext_resource type="PackedScene" uid="uid://b4akgw33q5n08" path="res://ui/shared/base_button.tscn" id="3_5y0ee"]
-[ext_resource type="Resource" uid="uid://d0hxt186ylf3m" path="res://levels/test_level_data.tres" id="3_cxcv0"]
 [ext_resource type="Texture2D" uid="uid://di6vs1fxkyj4k" path="res://icon.svg" id="4_jdj6j"]
 [ext_resource type="ButtonGroup" uid="uid://cx2xd0xsl8wjh" path="res://ui/play_menu/button_group_levels.tres" id="5_cml8f"]
 [ext_resource type="PackedScene" uid="uid://c2rauee3tqbwy" path="res://ui/play_menu/level_button.tscn" id="5_exixf"]
 [ext_resource type="StyleBox" uid="uid://lded44grux2v" path="res://ui/play_menu/style_button_play.tres" id="5_imgug"]
+[ext_resource type="PackedScene" uid="uid://dr006gvr4gar6" path="res://levels/level_island.tscn" id="8_wj04w"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ni0wf"]
 font_size = 70
@@ -91,13 +91,13 @@ theme_override_constants/separation = 8
 layout_mode = 2
 text = "Island"
 icon = ExtResource("4_jdj6j")
-level_data = ExtResource("3_cxcv0")
+level_scene = ExtResource("8_wj04w")
 
 [node name="MapButton2" parent="Panel/ScrollContainer/VBoxContainer" instance=ExtResource("5_exixf")]
 layout_mode = 2
 text = "Island"
 icon = ExtResource("4_jdj6j")
-level_data = ExtResource("3_cxcv0")
+level_scene = ExtResource("8_wj04w")
 
 [connection signal="pressed" from="Panel/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Panel/PlayButton" to="." method="_on_play_button_pressed"]
