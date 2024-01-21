@@ -59,7 +59,7 @@ extends CanvasLayer
 @export var target_gate_pos := Vector3.ZERO
 
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	_update_chrono_label()
 	_update_time_difference_label()
 	_update_record_label()
@@ -69,7 +69,7 @@ func _process(delta: float) -> void:
 
 func _update_chrono_label():
 	if %Chrono != null:
-		%Chrono.text = _time_ms_to_string(current_time_ms)
+		%Chrono.text = Utils.time_ms_to_string(current_time_ms)
 
 
 func _update_time_difference_label():
@@ -81,10 +81,10 @@ func _update_time_difference_label():
 	var time_diff_ms = gate_time_ms - current_time_ms
 	if time_diff_ms >= 0: # Winning
 		%TimeDifference.label_settings.font_color = Color.GREEN
-		%TimeDifference.text = "- " + _time_ms_to_string(abs(time_diff_ms))
+		%TimeDifference.text = "- " + Utils.time_ms_to_string(abs(time_diff_ms))
 	else: # Losing
 		%TimeDifference.label_settings.font_color = Color.RED
-		%TimeDifference.text = "+ " + _time_ms_to_string(abs(time_diff_ms))
+		%TimeDifference.text = "+ " + Utils.time_ms_to_string(abs(time_diff_ms))
 
 
 func _update_record_label():
@@ -93,16 +93,8 @@ func _update_record_label():
 		%RecordTime.label_settings.font_color = Color.DIM_GRAY
 		return
 	
-	%RecordTime.text = _time_ms_to_string(record_time_ms)
+	%RecordTime.text = Utils.time_ms_to_string(record_time_ms)
 	%RecordTime.label_settings.font_color = Color.DARK_GRAY
-
-
-func _time_ms_to_string(time_ms: int) -> String:
-	var minutes:int = time_ms / 60000
-	var seconds:int = (time_ms % 60000) / 1000
-	var miliseconds:int = (time_ms % 60000) % 1000
-	var time_str = "%02d:%02d.%03d" % [minutes, seconds, miliseconds]
-	return time_str
 
 
 func _update_race_completion_label():
