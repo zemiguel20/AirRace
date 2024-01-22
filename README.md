@@ -1,6 +1,6 @@
 # AirRace
 
-<img src="airrace_logo.svg" width="600" height="300">
+<img src="misc/airrace_logo/airrace_logo.svg" width="600" height="300">
 
 Small arcade flight racing game against time.
 
