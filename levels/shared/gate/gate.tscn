@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ddyq37bkg5tdm"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jx6ee"]
+height = 0.363446
+radius = 2.06598
+
+[sub_resource type="TorusMesh" id="TorusMesh_nbnw3"]
+inner_radius = 0.7
+
+[node name="Gate" type="Area3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("CylinderShape3D_jx6ee")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, -8.74228e-08, -2, 0, 2, -8.74228e-08, 0, 0, 0)
+mesh = SubResource("TorusMesh_nbnw3")

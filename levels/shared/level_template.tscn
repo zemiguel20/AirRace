@@ -1,14 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://disifwk1tpht7"]
+[gd_scene load_steps=10 format=3 uid="uid://disifwk1tpht7"]
 
 [ext_resource type="Script" path="res://levels/shared/level.gd" id="1_nyefx"]
 [ext_resource type="PackedScene" uid="uid://rhrxw4olpqdm" path="res://ui/hud/hud.tscn" id="2_wq00v"]
+[ext_resource type="PackedScene" uid="uid://ddyq37bkg5tdm" path="res://levels/shared/gate/gate.tscn" id="3_qhx6g"]
+[ext_resource type="PackedScene" uid="uid://bahijhbk1h08u" path="res://jet.tscn" id="4_c543k"]
 
 [sub_resource type="Animation" id="Animation_wg2b0"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("MapName:modulate")
+tracks/0/path = NodePath("IntroUI/MapName:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -20,7 +22,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("MapName:position")
+tracks/1/path = NodePath("IntroUI/MapName:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -32,7 +34,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Timer:visible")
+tracks/2/path = NodePath("IntroUI/Timer:visible")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -56,10 +58,22 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("PlayerCamera:current")
+tracks/4/path = NodePath("Jet/PlayerCamera:current")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HUD:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
@@ -143,7 +157,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("PlayerCamera:current")
+tracks/5/path = NodePath("Jet/PlayerCamera:current")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -151,6 +165,32 @@ tracks/5/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/6/type = "method"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath(".")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(7.4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_start_race"
+}]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("HUD:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 3.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_nkujj"]
@@ -170,7 +210,7 @@ outline_color = Color(0, 0, 0, 1)
 [node name="TemplateLevel" type="Node"]
 script = ExtResource("1_nyefx")
 
-[node name="AnimationTree" type="AnimationPlayer" parent="."]
+[node name="IntroSequencePlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_nkujj")
 }
@@ -180,24 +220,21 @@ autoplay = "intro_sequence"
 editor_description = "Camera displaying map at start and end sequence of levels"
 current = true
 
-[node name="PlayerCamera" type="Camera3D" parent="."]
-editor_description = "Camera displaying map at start and end sequence of levels"
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.399263, 2.37035, 6.15538)
-current = true
-
 [node name="IntroUI" type="CanvasLayer" parent="."]
 
 [node name="MapName" type="Label" parent="IntroUI"]
-modulate = Color(1, 1, 1, 0)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -167.0
-offset_right = 167.0
-offset_bottom = 89.0001
+offset_left = 473.0
+offset_top = 10.0
+offset_right = 807.0
+offset_bottom = 99.0001
 grow_horizontal = 2
 text = "Map Name"
 label_settings = SubResource("LabelSettings_dmrrx")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Timer" type="Label" parent="IntroUI"]
 unique_name_in_owner = true
@@ -219,3 +256,19 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="HUD" parent="." instance=ExtResource("2_wq00v")]
+
+[node name="Gates" type="Node3D" parent="."]
+
+[node name="Gate" parent="Gates" instance=ExtResource("3_qhx6g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.3891)
+
+[node name="Jet" parent="." instance=ExtResource("4_c543k")]
+process_mode = 4
+transform = Transform3D(-0.998895, 0, -0.0470018, 0, 1, 0, 0.0470018, 0, -0.998895, 0, 0, 0)
+
+[node name="PlayerCamera" type="Camera3D" parent="Jet"]
+editor_description = "Camera displaying map at start and end sequence of levels"
+transform = Transform3D(-0.998895, 0, 0.0470018, 0, 1, 0, -0.0470018, 0, -0.998895, -0.109508, 2.37035, -6.16734)
+current = true
+
+[connection signal="body_entered" from="Gates/Gate" to="." method="_on_gate_body_entered"]
