@@ -8,7 +8,7 @@
 [node name="PreviewCamera" parent="." index="1"]
 transform = Transform3D(0.738481, -0.226717, 0.635016, 0, 0.941777, 0.336239, -0.674274, -0.248306, 0.695484, 52.3814, 29.5376, 35.9007)
 
-[node name="IntroUI" parent="." index="2"]
+[node name="IntroUI" parent="." index="3"]
 layer = 2
 
 [node name="MapName" parent="IntroUI" index="0"]
@@ -17,7 +17,7 @@ text = "Island"
 [node name="Gate" parent="Gates" index="0"]
 transform = Transform3D(0.996777, 0.00580246, -0.0800119, 0, 0.997381, 0.0723301, 0.080222, -0.072097, 0.994166, 17.8627, 27.598, -39.6883)
 
-[node name="Jet" parent="." index="5"]
-transform = Transform3D(-0.978386, 0, 0.206785, 0, 1, 0, -0.206785, 0, -0.978386, 7.0433, 21.881, 19.225)
-
 [node name="IslandMap" parent="." index="6" instance=ExtResource("2_1ebrw")]
+
+[node name="Jet" parent="." index="7"]
+transform = Transform3D(-0.978386, 0, 0.206785, 0, 1, 0, -0.206785, 0, -0.978386, 7.0433, 21.881, 19.225)

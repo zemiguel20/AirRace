@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://disifwk1tpht7"]
+[gd_scene load_steps=11 format=3 uid="uid://disifwk1tpht7"]
 
 [ext_resource type="Script" path="res://levels/shared/level.gd" id="1_nyefx"]
+[ext_resource type="Script" path="res://core/player_camera.gd" id="2_u0qpi"]
 [ext_resource type="PackedScene" uid="uid://rhrxw4olpqdm" path="res://ui/hud/hud.tscn" id="2_wq00v"]
 [ext_resource type="PackedScene" uid="uid://ddyq37bkg5tdm" path="res://levels/shared/gate/gate.tscn" id="3_qhx6g"]
 [ext_resource type="PackedScene" uid="uid://bahijhbk1h08u" path="res://jet.tscn" id="4_c543k"]
@@ -58,7 +59,7 @@ tracks/3/keys = {
 tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("Jet/PlayerCamera:current")
+tracks/4/path = NodePath("PlayerCamera:current")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
@@ -157,7 +158,7 @@ tracks/4/keys = {
 tracks/5/type = "value"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("Jet/PlayerCamera:current")
+tracks/5/path = NodePath("PlayerCamera:current")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
@@ -220,6 +221,14 @@ autoplay = "intro_sequence"
 editor_description = "Camera displaying map at start and end sequence of levels"
 current = true
 
+[node name="PlayerCamera" type="Camera3D" parent="." node_paths=PackedStringArray("aircraft")]
+editor_description = "Camera displaying map at start and end sequence of levels"
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.399263, 2.37035, 6.15538)
+current = true
+script = ExtResource("2_u0qpi")
+aircraft = NodePath("../Jet")
+base_pos_offset = Vector3(0, 0.3, -5)
+
 [node name="IntroUI" type="CanvasLayer" parent="."]
 
 [node name="MapName" type="Label" parent="IntroUI"]
@@ -265,10 +274,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.3891)
 [node name="Jet" parent="." instance=ExtResource("4_c543k")]
 process_mode = 4
 transform = Transform3D(-0.998895, 0, -0.0470018, 0, 1, 0, 0.0470018, 0, -0.998895, 0, 0, 0)
-
-[node name="PlayerCamera" type="Camera3D" parent="Jet"]
-editor_description = "Camera displaying map at start and end sequence of levels"
-transform = Transform3D(-0.998895, 0, 0.0470018, 0, 1, 0, -0.0470018, 0, -0.998895, -0.109508, 2.37035, -6.16734)
-current = true
 
 [connection signal="body_entered" from="Gates/Gate" to="." method="_on_gate_body_entered"]
