@@ -25,11 +25,12 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	
-	# Read input
-	var yaw_input = Input.get_axis("turn_right", "turn_left")
-	var pitch_input = Input.get_axis("pitch_down", "pitch_up")
+	# Read aircraft angular velocity
+	var pitch = clampf(aircraft.current_ang_vel.x, -1, 1)
+	var yaw = clampf(aircraft.current_ang_vel.y, -1, 1)
+	print("Pitch:" + str(pitch) + " Yaw:" + str(yaw))
 	# Bonus offset depending on input. Interpolation smoothing
-	var target_bonus_offset = Vector3(yaw_input, pitch_input, 0) * bonus_offset
+	var target_bonus_offset = Vector3(yaw, pitch, 0) * bonus_offset
 	current_bonus_offset = current_bonus_offset.lerp(target_bonus_offset, snap_speed * delta)
 	
 	# Position behind aircraft with offset
