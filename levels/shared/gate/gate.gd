@@ -1,4 +1,4 @@
-extends Area3D
+class_name Gate extends Area3D
 
 
 func activate():
