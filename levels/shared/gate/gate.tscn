@@ -1,4 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddyq37bkg5tdm"]
+[gd_scene load_steps=4 format=3 uid="uid://ddyq37bkg5tdm"]
+
+[ext_resource type="Script" path="res://levels/shared/gate/gate.gd" id="1_tjklr"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_jx6ee"]
 height = 0.363446
@@ -8,6 +10,7 @@ radius = 2.06598
 inner_radius = 0.7
 
 [node name="Gate" type="Area3D"]
+script = ExtResource("1_tjklr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0)
