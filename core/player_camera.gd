@@ -6,7 +6,7 @@ extends Camera3D
 @export var base_pos_offset: Vector3 = Vector3(0, 0.1, -2.7)
 ## Speed of snapping between angles when turning
 @export var snap_speed = 3
-## Bonus offset amount
+## Bonus offset amount when turning
 @export var bonus_offset = 0.5
 
 # Used for interpolation
