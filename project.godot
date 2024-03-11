@@ -35,6 +35,7 @@ folder_colors={
 "res://levels/": "yellow",
 "res://maps/": "red",
 "res://misc/": "gray",
+"res://tests/": "yellow",
 "res://ui/": "green"
 }
 

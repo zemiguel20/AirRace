@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dmeud4em3nwwx"
-path="res://.godot/imported/prototype_512x512_brown.png-1592e282d8265ce44391b1ab8c24c2cc.ctex"
+path="res://.godot/imported/prototype_512x512_brown.png-d0e9f4084f2c1330de499012a5ba5a1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://misc/gridbox_textures/prototype_512x512_brown.png"
-dest_files=["res://.godot/imported/prototype_512x512_brown.png-1592e282d8265ce44391b1ab8c24c2cc.ctex"]
+source_file="res://tests/gridbox_textures/prototype_512x512_brown.png"
+dest_files=["res://.godot/imported/prototype_512x512_brown.png-d0e9f4084f2c1330de499012a5ba5a1a.ctex"]
 
 [params]
 
