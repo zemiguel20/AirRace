@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://df4o15fgsycyt"]
 
-[ext_resource type="PackedScene" uid="uid://cqudd0wxgsk8c" path="res://maps/hangar/model/hangar.glb" id="1_7vjj6"]
+[ext_resource type="PackedScene" uid="uid://bdd6bnnku60hy" path="res://models/hangar.gltf" id="1_djckv"]
 [ext_resource type="Environment" uid="uid://bsrjij22w7amo" path="res://maps/hangar/hangar_env.tres" id="1_jb2to"]
 [ext_resource type="Texture2D" uid="uid://5ax7qocqg4jf" path="res://misc/airrace_logo/airrace_logo.png" id="3_6m67k"]
 [ext_resource type="VoxelGIData" uid="uid://dgwedy56tyw84" path="res://maps/hangar/hangar_gi_data.tres" id="4_70sia"]
@@ -35,17 +35,7 @@ item/0/navigation_layers = 1
 
 [node name="Hangar" type="Node"]
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = ExtResource("1_jb2to")
-
-[node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.850813, 0.196661, -0.48728, -0.171827, 0.980469, 0.0956886, 0.496581, 0.00231478, 0.867987, 0, 6.78873, 0)
-light_color = Color(1, 0.537255, 0.129412, 1)
-shadow_enabled = true
-directional_shadow_fade_start = 1.0
-directional_shadow_max_distance = 50.0
-
-[node name="hangar" parent="." instance=ExtResource("1_7vjj6")]
+[node name="hangar" parent="." instance=ExtResource("1_djckv")]
 transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
 
 [node name="CeilingLight" type="SpotLight3D" parent="hangar"]
@@ -108,6 +98,16 @@ size = Vector3(1.58, 0.05, 1)
 texture_albedo = ExtResource("3_6m67k")
 upper_fade = 0.01
 lower_fade = 0.01
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("1_jb2to")
+
+[node name="Sun" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.850813, 0.196661, -0.48728, -0.171827, 0.980469, 0.0956886, 0.496581, 0.00231478, 0.867987, 0, 6.78873, 0)
+light_color = Color(1, 0.537255, 0.129412, 1)
+shadow_enabled = true
+directional_shadow_fade_start = 1.0
+directional_shadow_max_distance = 50.0
 
 [node name="Grass" type="GridMap" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0)
