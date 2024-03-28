@@ -34,8 +34,11 @@ folder_colors={
 "res://core/": "teal",
 "res://levels/": "yellow",
 "res://maps/": "red",
+"res://materials/": "purple",
 "res://misc/": "gray",
-"res://tests/": "yellow",
+"res://models/": "red",
+"res://scenes/": "yellow",
+"res://scripts/": "blue",
 "res://ui/": "green"
 }
 

@@ -1,4 +1,3 @@
-@icon("res://aircraft_controller/aeroplane_icon.svg")
 ## Simple arcade aircraft controller
 class_name Aircraft
 extends AnimatableBody3D

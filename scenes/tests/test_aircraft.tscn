@@ -1,6 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://sauxvolqhkg6"]
+[gd_scene load_steps=8 format=3 uid="uid://sauxvolqhkg6"]
 
-[ext_resource type="Material" uid="uid://pfuo5ar14jo2" path="res://materials/test_gridbox/gridbox_blue.tres" id="1_ev4de"]
+[ext_resource type="Material" uid="uid://pfuo5ar14jo2" path="res://materials/test_gridbox/gridbox_blue.tres" id="1_xshdy"]
+[ext_resource type="PackedScene" uid="uid://bjdvkcgcumtw5" path="res://scenes/aircrafts/jet.tscn" id="2_ftahb"]
+
+[sub_resource type="GDScript" id="GDScript_d80um"]
+script/source = "extends Node
+
+func _process(delta: float) -> void:
+	print(Engine.get_frames_per_second())
+"
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ubgvt"]
 size = Vector2(1000, 1000)
@@ -15,18 +23,23 @@ background_mode = 2
 sky = SubResource("Sky_51nvj")
 
 [node name="TestAircraft" type="Node"]
+script = SubResource("GDScript_d80um")
 
 [node name="Map" type="Node3D" parent="."]
 
 [node name="Floor" type="CSGMesh3D" parent="Map"]
 use_collision = true
 mesh = SubResource("PlaneMesh_ubgvt")
-material = ExtResource("1_ev4de")
+material = ExtResource("1_xshdy")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_mnlnu")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.3786, 0.92556, 0, -0.92556, 0.3786, 0, 5.57948, 0)
+
+[node name="Jet" parent="." instance=ExtResource("2_ftahb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84187, 1.05879, -3.76231)
+
+[node name="Camera3D" type="Camera3D" parent="Jet"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -4.57307)
