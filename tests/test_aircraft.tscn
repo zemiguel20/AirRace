@@ -1,13 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://sauxvolqhkg6"]
+[gd_scene load_steps=6 format=3 uid="uid://sauxvolqhkg6"]
 
-[ext_resource type="Texture2D" uid="uid://c2cxqkdbjfv2m" path="res://tests/gridbox_textures/prototype_512x512_blue2.png" id="1_t0ybb"]
+[ext_resource type="Material" uid="uid://pfuo5ar14jo2" path="res://materials/test_gridbox/gridbox_blue.tres" id="1_ev4de"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ubgvt"]
 size = Vector2(1000, 1000)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4l0ge"]
-albedo_texture = ExtResource("1_t0ybb")
-uv1_triplanar = true
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oyfp8"]
 
@@ -25,7 +21,7 @@ sky = SubResource("Sky_51nvj")
 [node name="Floor" type="CSGMesh3D" parent="Map"]
 use_collision = true
 mesh = SubResource("PlaneMesh_ubgvt")
-material = SubResource("StandardMaterial3D_4l0ge")
+material = ExtResource("1_ev4de")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_mnlnu")

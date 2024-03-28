@@ -2,26 +2,27 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://vbbph162h243"
-path="res://.godot/imported/prototype_512x512_green2.png-d31765bc427bc5c66f40217c4d234105.ctex"
+uid="uid://boo553aom7yq0"
+path.s3tc="res://.godot/imported/prototype_512x512_blue3.png-6b7c3c6549221bc9cbf1ccfcac37e3a8.s3tc.ctex"
 metadata={
-"vram_texture": false
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
 }
 
 [deps]
 
-source_file="res://tests/gridbox_textures/prototype_512x512_green2.png"
-dest_files=["res://.godot/imported/prototype_512x512_green2.png-d31765bc427bc5c66f40217c4d234105.ctex"]
+source_file="res://materials/test_gridbox/textures/prototype_512x512_blue3.png"
+dest_files=["res://.godot/imported/prototype_512x512_blue3.png-6b7c3c6549221bc9cbf1ccfcac37e3a8.s3tc.ctex"]
 
 [params]
 
-compress/mode=0
+compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
-mipmaps/generate=false
+mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
@@ -31,4 +32,4 @@ process/normal_map_invert_y=false
 process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
-detect_3d/compress_to=1
+detect_3d/compress_to=0
