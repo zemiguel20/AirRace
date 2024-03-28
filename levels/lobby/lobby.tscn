@@ -1,11 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://cb2lawnmthfy7"]
+[gd_scene load_steps=9 format=3 uid="uid://cb2lawnmthfy7"]
 
 [ext_resource type="Script" path="res://levels/lobby/lobby.gd" id="1_lru5a"]
 [ext_resource type="PackedScene" uid="uid://df4o15fgsycyt" path="res://maps/hangar/hangar.tscn" id="2_7yvky"]
 [ext_resource type="PackedScene" uid="uid://dejvw6nlvd6ba" path="res://ui/title_screen/title_screen.tscn" id="3_gxqkx"]
 [ext_resource type="PackedScene" uid="uid://cw2oy0prnugmg" path="res://ui/main_menu/main_menu.tscn" id="3_tc4pa"]
 [ext_resource type="PackedScene" uid="uid://5ijv1pynbem1" path="res://ui/play_menu/play_menu.tscn" id="4_whqqi"]
-[ext_resource type="PackedScene" uid="uid://bahijhbk1h08u" path="res://jet.tscn" id="6_6isjk"]
 
 [sub_resource type="Animation" id="Animation_u20fe"]
 length = 0.001
@@ -92,10 +91,6 @@ root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_pug4l")
 }
-
-[node name="Jet" parent="." instance=ExtResource("6_6isjk")]
-process_mode = 4
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.195058, 0)
 
 [connection signal="exited" from="TitleScreen" to="." method="_on_title_screen_exited"]
 [connection signal="play_pressed" from="MainMenu" to="." method="_on_main_menu_play_pressed"]

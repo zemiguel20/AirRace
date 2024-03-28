@@ -1,10 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://disifwk1tpht7"]
+[gd_scene load_steps=10 format=3 uid="uid://disifwk1tpht7"]
 
 [ext_resource type="Script" path="res://levels/shared/level.gd" id="1_nyefx"]
 [ext_resource type="Script" path="res://core/player_camera.gd" id="2_u0qpi"]
 [ext_resource type="PackedScene" uid="uid://rhrxw4olpqdm" path="res://ui/hud/hud.tscn" id="2_wq00v"]
 [ext_resource type="PackedScene" uid="uid://ddyq37bkg5tdm" path="res://levels/shared/gate/gate.tscn" id="3_qhx6g"]
-[ext_resource type="PackedScene" uid="uid://bahijhbk1h08u" path="res://jet.tscn" id="4_c543k"]
 
 [sub_resource type="Animation" id="Animation_wg2b0"]
 length = 0.001
@@ -226,7 +225,7 @@ editor_description = "Camera displaying map at start and end sequence of levels"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.399263, 2.37035, 6.15538)
 current = true
 script = ExtResource("2_u0qpi")
-aircraft = NodePath("../Jet")
+aircraft = NodePath("")
 base_pos_offset = Vector3(0, 0.3, -5)
 
 [node name="IntroUI" type="CanvasLayer" parent="."]
@@ -235,9 +234,9 @@ base_pos_offset = Vector3(0, 0.3, -5)
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 473.0
+offset_left = -167.0
 offset_top = 10.0
-offset_right = 807.0
+offset_right = 167.0
 offset_bottom = 99.0001
 grow_horizontal = 2
 text = "Map Name"
@@ -270,9 +269,5 @@ vertical_alignment = 1
 
 [node name="Gate" parent="Gates" instance=ExtResource("3_qhx6g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -20.3891)
-
-[node name="Jet" parent="." instance=ExtResource("4_c543k")]
-process_mode = 4
-transform = Transform3D(-0.998895, 0, -0.0470018, 0, 1, 0, 0.0470018, 0, -0.998895, 0, 0, 0)
 
 [connection signal="body_entered" from="Gates/Gate" to="." method="_on_gate_body_entered"]

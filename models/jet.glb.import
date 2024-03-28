@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://pnewsil12g7b"
-path="res://.godot/imported/jet.gltf-5eb6687ae0c7136018a6f2ca691ab7de.scn"
+uid="uid://horb0mnsui6d"
+path="res://.godot/imported/jet.glb-2938e0036477c98d061ce57828924e97.scn"
 
 [deps]
 
-source_file="res://models/jet.gltf"
-dest_files=["res://.godot/imported/jet.gltf-5eb6687ae0c7136018a6f2ca691ab7de.scn"]
+source_file="res://models/jet.glb"
+dest_files=["res://.godot/imported/jet.glb-2938e0036477c98d061ce57828924e97.scn"]
 
 [params]
 
@@ -29,13 +29,6 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={
-"materials": {
-"Material.001": {
-"use_external/enabled": true,
-"use_external/path": "res://materials/jet/jet.tres"
-}
-}
-}
+_subresources={}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

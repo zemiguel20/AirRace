@@ -1,6 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://iyv3ils15wb8"]
-
-[ext_resource type="Texture2D" uid="uid://dyqwlgbqpa617" path="res://materials/jet/textures/jet_color.png" id="1_njpu1"]
-
-[resource]
-albedo_texture = ExtResource("1_njpu1")
