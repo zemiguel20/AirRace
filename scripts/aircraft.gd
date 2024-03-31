@@ -1,76 +1,38 @@
-## Simple arcade aircraft controller
 class_name Aircraft
 extends AnimatableBody3D
+## @tutorial(Simplified Airplane Controller): https://kidscancode.org/godot_recipes/3.x/3d/simple_airplane/
 
-@export_range(1, 50, 1) var forward_speed: float = 20
-## Downward boost makes descent faster, climb slower, and aircraft fall slightly while rolling.
-@export_range(1, 50, 1) var downward_boost: float = 10
 
-@export_range(0, 10, 0.1) var roll_speed: float = 3
-@export_range(0, 10, 0.1) var pitch_speed: float = 2
-@export_range(0, 10, 0.1) var yaw_speed: float = 1
+@export var forward_speed = 10
+@export var turn_yaw_speed = 1
+@export var pitch_speed = 1
+@export var turn_roll_speed: float = 3.0 ## Wings "autolevel" speed
+@export var turn_roll_angle: float = 0.7
 
-## Higher value means rotation less drifty
-@export_range(0.1, 20, 0.1) var rotation_drag: float = 3
-## Higher value means less drifting
-@export_range(0.1, 20, 0.1) var movement_drag: float = 3
+var turn_input: float = 0.0
+var pitch_input: float = 0.0
 
-# Current angular velocity
-var current_ang_vel = Vector3.ZERO
-# Current linear velocity
-var current_lin_vel = Vector3.ZERO
 
-# Downward velocity depends on the tilt angle
-var _down_vel_curve: Curve
+func _ready() -> void:
+	sync_to_physics = false # NOTE: must be turned off because is moved with move_and_collide
 
-func _ready():
-	# Construct curve to sample downwards velocity from angle
-	_down_vel_curve = Curve.new()
-	_down_vel_curve.add_point(Vector2(0, 0))
-	_down_vel_curve.add_point(Vector2(0.5, downward_boost))
-	_down_vel_curve.add_point(Vector2(0, 1))
-	_down_vel_curve.bake()
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	_process_rotation(delta)
-	_process_movement(delta)
+func _process(delta: float) -> void:
+	# Turn (roll/yaw) input
+	turn_input = 0.0
+	turn_input -= Input.get_action_strength("roll_right")
+	turn_input += Input.get_action_strength("roll_left")
+	# Pitch (climb/dive) input
+	pitch_input = 0.0
+	pitch_input -= Input.get_action_strength("pitch_down")
+	pitch_input += Input.get_action_strength("pitch_up")
 
-func _process_rotation(delta):
-	# Read input
-	var roll_input = Input.get_axis("roll_left", "roll_right")
-	var yaw_input = Input.get_axis("turn_right", "turn_left")
-	var pitch_input = Input.get_axis("pitch_up", "pitch_down")
-	
-	# Calculate target angular velocity
-	var target_ang_vel = Vector3(pitch_input * pitch_speed, \
-								yaw_input * yaw_speed, \
-								roll_input * roll_speed)
-	
-	# Update current angular velocity
-	var lerp_weight = clampf(rotation_drag * delta, 0, 1) #Clamp fixes jitter
-	current_ang_vel = current_ang_vel.lerp(target_ang_vel, lerp_weight) 
-	
-	# Rotate aircraft
-	var rotation_step: Vector3 = current_ang_vel * delta
-	rotate_object_local(Vector3.MODEL_LEFT, rotation_step.x)
-	rotate_object_local(Vector3.MODEL_TOP, rotation_step.y)
-	rotate_object_local(Vector3.MODEL_FRONT, rotation_step.z)
-	
-func _process_movement(delta):
-	# Calculate thrust
-	var thrust: Vector3 = forward_speed * transform.basis.z
-	
-	# Calculate downwards velocity
-	var tilt_angle = transform.basis.y.angle_to(Vector3.UP) / PI # Curve is normalized
-	var gravity: Vector3 = _down_vel_curve.sample(tilt_angle) * Vector3.DOWN
-	
-	# Target linear velocity
-	var target_lin_velocity = thrust + gravity
-	
-	# Update current linear velocity
-	var lerp_weight = clampf(movement_drag * delta, 0, 1) #Clamp fixes jitter
-	current_lin_vel = current_lin_vel.lerp(target_lin_velocity, lerp_weight)
-	
-	# Move aircraft
-	move_and_collide(current_lin_vel * delta)
+
+func _physics_process(delta: float) -> void:
+	# Movement forward
+	var velocity = transform.basis.z * forward_speed
+	var _collision_data = move_and_collide(velocity * delta)
+	# Rotate based on input
+	transform.basis = transform.basis.rotated(transform.basis.x, -pitch_input * pitch_speed * delta)
+	transform.basis = transform.basis.rotated(Vector3.UP, turn_input * turn_yaw_speed * delta)
+	rotation.z = lerp(rotation.z, -turn_input * turn_roll_angle, turn_roll_speed * delta)
