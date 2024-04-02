@@ -3,36 +3,35 @@ extends AnimatableBody3D
 ## @tutorial(Simplified Airplane Controller): https://kidscancode.org/godot_recipes/3.x/3d/simple_airplane/
 
 
-@export var forward_speed = 10
-@export var turn_yaw_speed = 1
-@export var pitch_speed = 1
-@export var turn_roll_speed: float = 3.0 ## Wings "autolevel" speed
-@export var turn_roll_angle: float = 0.7
+@export var thrust: float = 10
+@export var turn_speed: float = 1
+@export var pitch_speed: float = 1
+@export var roll_speed: float = 1
+@export_range(0.0, 10) var angular_drag: float = 0.5 ## 1 - no rotation smoothing, 0 - infinite rotation "drift"
 
 var turn_input: float = 0.0
 var pitch_input: float = 0.0
+var roll_input: float = 0.0
 
-
-func _ready() -> void:
-	sync_to_physics = false # NOTE: must be turned off because is moved with move_and_collide
+var lin_velocity: Vector3 = Vector3.ZERO
+var ang_velocity: Vector3 = Vector3.ZERO
 
 
 func _process(delta: float) -> void:
-	# Turn (roll/yaw) input
-	turn_input = 0.0
-	turn_input -= Input.get_action_strength("roll_right")
-	turn_input += Input.get_action_strength("roll_left")
-	# Pitch (climb/dive) input
-	pitch_input = 0.0
-	pitch_input -= Input.get_action_strength("pitch_down")
-	pitch_input += Input.get_action_strength("pitch_up")
+	pitch_input = Input.get_axis("pitch_down", "pitch_up")
+	turn_input = Input.get_axis("turn_left", "turn_right")
+	roll_input = Input.get_axis("roll_left", "roll_right")
 
 
 func _physics_process(delta: float) -> void:
 	# Movement forward
-	var velocity = transform.basis.z * forward_speed
-	var _collision_data = move_and_collide(velocity * delta)
+	lin_velocity = transform.basis.z * thrust
+	var _collision_data = move_and_collide(lin_velocity * delta)
 	# Rotate based on input
-	transform.basis = transform.basis.rotated(transform.basis.x, -pitch_input * pitch_speed * delta)
-	transform.basis = transform.basis.rotated(Vector3.UP, turn_input * turn_yaw_speed * delta)
-	rotation.z = lerp(rotation.z, -turn_input * turn_roll_angle, turn_roll_speed * delta)
+	var target_ang_velocity = Vector3(pitch_input * pitch_speed, turn_input * turn_speed, roll_input * roll_speed)
+	ang_velocity = ang_velocity.lerp(target_ang_velocity, angular_drag * delta)
+	rotate(-transform.basis.x, ang_velocity.x * delta)
+	rotate(-transform.basis.y, ang_velocity.y * delta)
+	rotate(transform.basis.z, ang_velocity.z * delta)
+	
+	# TODO: Bank turn animation

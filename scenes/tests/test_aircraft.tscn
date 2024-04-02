@@ -47,4 +47,3 @@ offset = Vector3(0, 0.3, -5)
 
 [node name="Jet" parent="." instance=ExtResource("2_ftahb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84187, 1.05879, -3.76231)
-turn_roll_angle = 0.52
