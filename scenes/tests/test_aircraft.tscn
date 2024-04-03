@@ -2,7 +2,7 @@
 
 [ext_resource type="Material" uid="uid://pfuo5ar14jo2" path="res://materials/test_gridbox/gridbox_blue.tres" id="1_xshdy"]
 [ext_resource type="PackedScene" uid="uid://bjdvkcgcumtw5" path="res://scenes/aircrafts/jet.tscn" id="2_ftahb"]
-[ext_resource type="Script" path="res://scripts/smooth_camera.gd" id="3_pmd16"]
+[ext_resource type="Script" path="res://scripts/smooth_camera.gd" id="2_hm27v"]
 
 [sub_resource type="GDScript" id="GDScript_d80um"]
 script/source = "extends Node
@@ -41,9 +41,10 @@ transform = Transform3D(1, 0, 0, 0, 0.3786, 0.92556, 0, -0.92556, 0.3786, 0, 5.5
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.84187, 1.05879, -8.33538)
-script = ExtResource("3_pmd16")
+script = ExtResource("2_hm27v")
+lerp_speed = 5.0
 target = NodePath("../Jet")
-offset = Vector3(0, 0.3, -5)
+offset = Vector3(0, 0, -4)
 
 [node name="Jet" parent="." instance=ExtResource("2_ftahb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84187, 1.05879, -3.76231)

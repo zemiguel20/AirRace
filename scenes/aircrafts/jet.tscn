@@ -14,10 +14,6 @@ size = Vector3(5, 0.35, 1.5)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 28.4499)
 sync_to_physics = false
 script = ExtResource("2_ryocp")
-turn_speed = 2.0
-pitch_speed = 2.0
-roll_speed = 2.0
-angular_drag = 5.0
 
 [node name="Model" parent="." instance=ExtResource("1_junfv")]
 
