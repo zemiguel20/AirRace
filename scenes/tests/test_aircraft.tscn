@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://sauxvolqhkg6"]
+[gd_scene load_steps=10 format=3 uid="uid://sauxvolqhkg6"]
 
 [ext_resource type="Material" uid="uid://pfuo5ar14jo2" path="res://materials/test_gridbox/gridbox_blue.tres" id="1_xshdy"]
+[ext_resource type="Material" uid="uid://c3srf7032l87i" path="res://materials/test_gridbox/gridbox_orange.tres" id="2_3lyac"]
 [ext_resource type="PackedScene" uid="uid://bjdvkcgcumtw5" path="res://scenes/aircrafts/jet.tscn" id="2_ftahb"]
 [ext_resource type="Script" path="res://scripts/smooth_camera.gd" id="2_hm27v"]
 
@@ -33,18 +34,22 @@ use_collision = true
 mesh = SubResource("PlaneMesh_ubgvt")
 material = ExtResource("1_xshdy")
 
+[node name="CSGBox3D" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -431.942, 20.3058, -415.017)
+size = Vector3(11.9581, 40.4561, 14.8012)
+material = ExtResource("2_3lyac")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_mnlnu")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.3786, 0.92556, 0, -0.92556, 0.3786, 0, 5.57948, 0)
+shadow_enabled = true
 
 [node name="Camera3D" type="Camera3D" parent="." node_paths=PackedStringArray("target")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.84187, 1.05879, -8.33538)
 script = ExtResource("2_hm27v")
-lerp_speed = 5.0
 target = NodePath("../Jet")
-offset = Vector3(0, 0, -4)
 
 [node name="Jet" parent="." instance=ExtResource("2_ftahb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84187, 1.05879, -3.76231)
