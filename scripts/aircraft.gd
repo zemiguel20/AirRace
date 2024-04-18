@@ -3,12 +3,14 @@ extends AnimatableBody3D
 ## @tutorial(Simplified Airplane Controller): https://kidscancode.org/godot_recipes/3.x/3d/simple_airplane/
 
 
+signal crashed
 @export var forward_speed = 20
 @export var pitch_speed = 1.5
 @export var turn_speed = 1.9
 @export var input_response = 8.0
 var angular_velocity = Vector3.ZERO
 var _stabilizing = false
+
 
 func _ready():
 	rotate_y(0.0001) # HACK: Upside down Z angle is 0 until Y is rotated (?)
@@ -53,7 +55,18 @@ func _physics_process(delta):
 	# Move forward / Thrust
 	var velocity = transform.basis.z * forward_speed
 	var _collision_data = move_and_collide(velocity * delta)
-	# TODO: check if collision
+	# Process collision
+	if _collision_data != null:
+		crashed.emit()
+
+
+func reset_rotation():
+	var model = $Model as Node3D
+	var wing_col  = $WingCollisionShape as Node3D
+	model.rotation.z = 0.0
+	wing_col.rotation.z = 0.0
+	
+	angular_velocity = Vector3.ZERO
 
 
 func _stabilize():

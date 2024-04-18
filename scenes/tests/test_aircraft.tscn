@@ -8,9 +8,29 @@
 [sub_resource type="GDScript" id="GDScript_d80um"]
 script/source = "extends Node
 
+
+@onready var jet = $Jet as Aircraft
+@onready var cam = $Camera3D as SmoothCamera
+
+
 func _process(delta: float) -> void:
 	#print(Engine.get_frames_per_second())
 	pass
+
+
+func spawn():
+	jet.global_position = $SpawnPosition.global_position
+	jet.rotation = $SpawnPosition.rotation
+
+
+func _on_jet_crashed():
+	jet.process_mode = Node.PROCESS_MODE_DISABLED
+	await get_tree().create_timer(0.5).timeout
+	spawn()
+	jet.reset_rotation()
+	cam.reset_position()
+	await get_tree().create_timer(0.5).timeout
+	jet.process_mode = Node.PROCESS_MODE_INHERIT
 "
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ubgvt"]
@@ -54,3 +74,9 @@ target = NodePath("../Jet")
 
 [node name="Jet" parent="." instance=ExtResource("2_ftahb")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84187, 1.05879, -3.76231)
+
+[node name="SpawnPosition" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.35974, 0)
+gizmo_extents = 1.0
+
+[connection signal="crashed" from="Jet" to="." method="_on_jet_crashed"]
