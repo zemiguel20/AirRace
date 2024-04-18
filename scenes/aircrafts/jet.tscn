@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://bjdvkcgcumtw5"]
 
-[ext_resource type="PackedScene" uid="uid://dhtp4j3d3mal8" path="res://models/jet.glb" id="1_junfv"]
+[ext_resource type="PackedScene" uid="uid://ckxb841ctf44l" path="res://models/jet.glb" id="1_junfv"]
 [ext_resource type="Script" path="res://scripts/aircraft.gd" id="2_ryocp"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ywudb"]
@@ -11,7 +11,6 @@ height = 4.05985
 size = Vector3(5, 0.35, 1.5)
 
 [node name="Jet" type="AnimatableBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 28.4499)
 sync_to_physics = false
 script = ExtResource("2_ryocp")
 
@@ -24,5 +23,3 @@ shape = SubResource("CapsuleShape3D_ywudb")
 [node name="WingCollisionShape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00891113, -0.0222321, -0.240967)
 shape = SubResource("BoxShape3D_dyrn8")
-
-[editable path="Model"]
