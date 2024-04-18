@@ -8,7 +8,10 @@ extends AnimatableBody3D
 @export var turn_speed = 1.9
 @export var input_response = 8.0
 var angular_velocity = Vector3.ZERO
+var _stabilizing = false
 
+func _ready():
+	rotate_y(0.0001) # HACK: Upside down Z angle is 0 until Y is rotated (?)
 
 
 func _physics_process(delta):
@@ -43,9 +46,21 @@ func _physics_process(delta):
 	model.rotation.z = lerpf(model.rotation.z, deg_to_rad(45) * turn_input, input_response * delta)
 	wing_col.rotation.z = lerpf(wing_col.rotation.z, deg_to_rad(45) * turn_input, input_response * delta)
 	
-	# TODO: If upside down, and no input, start stabilization routine
+	# If not turning, roll back to upright position
+	if not _stabilizing and is_upside_down and pitch_input == 0.0 and turn_input == 0.0:
+		_stabilize()
 	
 	# Move forward / Thrust
 	var velocity = transform.basis.z * forward_speed
 	var _collision_data = move_and_collide(velocity * delta)
 	# TODO: check if collision
+
+
+func _stabilize():
+	_stabilizing = true
+	var tween = create_tween().bind_node(self)
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property(self, "rotation:z", 0.0, 1.0)
+	await tween.finished
+	_stabilizing = false
