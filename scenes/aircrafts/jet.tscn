@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://prcokf1pvore"]
+[gd_scene load_steps=5 format=3 uid="uid://prcokf1pvore"]
 
 [ext_resource type="PackedScene" uid="uid://ckxb841ctf44l" path="res://models/jet.glb" id="1_nbyol"]
+[ext_resource type="Script" path="res://scripts/player_input_component.gd" id="2_l373p"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mda74"]
 radius = 0.433626
@@ -19,3 +20,6 @@ shape = SubResource("CapsuleShape3D_mda74")
 [node name="WingCollisionShape" type="CollisionShape3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00891113, -0.0222321, -0.240967)
 shape = SubResource("BoxShape3D_sjo4n")
+
+[node name="PlayerInputComponent" type="Node" parent="." index="3"]
+script = ExtResource("2_l373p")

@@ -10,6 +10,7 @@ signal crashed
 @export var input_response = 8.0
 var angular_velocity = Vector3.ZERO
 var _stabilizing = false
+@onready var player_input_component = $PlayerInputComponent
 
 
 func _ready():
@@ -18,12 +19,8 @@ func _ready():
 
 func _physics_process(delta):
 	# Read input
-	var pitch_input = Input.get_axis("pitch_down", "pitch_up")
-	if Settings.inverted_pitch_input:
-		pitch_input = pitch_input * -1
-	var turn_input = Input.get_axis("turn_left", "turn_right")
-	if Settings.inverted_turn_input:
-		turn_input = turn_input * -1
+	var pitch_input = player_input_component.pitch_input
+	var turn_input = player_input_component.turn_input
 	
 	# Target angular velocity based on input
 	var target_angular_velocity = Vector3.ZERO
