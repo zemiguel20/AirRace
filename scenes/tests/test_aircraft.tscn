@@ -2,8 +2,8 @@
 
 [ext_resource type="Material" uid="uid://pfuo5ar14jo2" path="res://materials/test_gridbox/gridbox_blue.tres" id="1_xshdy"]
 [ext_resource type="Material" uid="uid://c3srf7032l87i" path="res://materials/test_gridbox/gridbox_orange.tres" id="2_3lyac"]
-[ext_resource type="PackedScene" uid="uid://bjdvkcgcumtw5" path="res://scenes/aircrafts/jet.tscn" id="2_ftahb"]
 [ext_resource type="Script" path="res://scripts/smooth_camera.gd" id="2_hm27v"]
+[ext_resource type="PackedScene" uid="uid://prcokf1pvore" path="res://scenes/aircrafts/jet.tscn" id="4_s3rcj"]
 
 [sub_resource type="GDScript" id="GDScript_d80um"]
 script/source = "extends Node
@@ -72,11 +72,9 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.841
 script = ExtResource("2_hm27v")
 target = NodePath("../Jet")
 
-[node name="Jet" parent="." instance=ExtResource("2_ftahb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.84187, 1.05879, -3.76231)
-
 [node name="SpawnPosition" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.35974, 0)
 gizmo_extents = 1.0
 
-[connection signal="crashed" from="Jet" to="." method="_on_jet_crashed"]
+[node name="Jet" parent="." instance=ExtResource("4_s3rcj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.780976, 0.99182, -3.15908)
