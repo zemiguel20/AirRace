@@ -39,12 +39,6 @@ func _physics_process(delta):
 	rotate(-transform.basis.x, angular_velocity.x * delta) # Use local Right axis, positive angle = pitch up
 	rotate(Vector3.DOWN, angular_velocity.y * delta) # Use Down axis, positive angle = turn right
 	
-	# Bank turn animation
-	var model = $Model as Node3D
-	var wing_col  = $WingCollisionShape as Node3D
-	model.rotation.z = lerpf(model.rotation.z, deg_to_rad(45) * turn_input, input_response * delta)
-	wing_col.rotation.z = lerpf(wing_col.rotation.z, deg_to_rad(45) * turn_input, input_response * delta)
-	
 	# If not turning, roll back to upright position
 	if not _stabilizing and is_upside_down and pitch_input == 0.0 and turn_input == 0.0:
 		_stabilize()

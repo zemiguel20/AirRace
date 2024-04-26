@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://prcokf1pvore"]
+[gd_scene load_steps=6 format=3 uid="uid://prcokf1pvore"]
 
 [ext_resource type="PackedScene" uid="uid://ckxb841ctf44l" path="res://models/jet.glb" id="1_nbyol"]
 [ext_resource type="Script" path="res://scripts/player_input_component.gd" id="2_l373p"]
+[ext_resource type="Script" path="res://scripts/bank_turn_animator_component.gd" id="3_qutbo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mda74"]
 radius = 0.433626
@@ -23,3 +24,8 @@ shape = SubResource("BoxShape3D_sjo4n")
 
 [node name="PlayerInputComponent" type="Node" parent="." index="3"]
 script = ExtResource("2_l373p")
+
+[node name="BankTurnAnimatorComponent" type="Node" parent="." index="4" node_paths=PackedStringArray("targets", "input_component")]
+script = ExtResource("3_qutbo")
+targets = [NodePath("../Model"), NodePath("../WingCollisionShape")]
+input_component = NodePath("../PlayerInputComponent")
