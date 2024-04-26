@@ -13,8 +13,8 @@ dest_files=["res://.godot/imported/jet.glb-2938e0036477c98d061ce57828924e97.scn"
 
 [params]
 
-nodes/root_type=""
-nodes/root_name=""
+nodes/root_type="Aircraft"
+nodes/root_name="Jet"
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 meshes/ensure_tangents=true

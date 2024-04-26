@@ -1,25 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjdvkcgcumtw5"]
+[gd_scene load_steps=4 format=3 uid="uid://prcokf1pvore"]
 
-[ext_resource type="PackedScene" uid="uid://ckxb841ctf44l" path="res://models/jet.glb" id="1_junfv"]
-[ext_resource type="Script" path="res://scripts/aircraft.gd" id="2_ryocp"]
+[ext_resource type="PackedScene" uid="uid://ckxb841ctf44l" path="res://models/jet.glb" id="1_nbyol"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ywudb"]
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mda74"]
 radius = 0.433626
 height = 4.05985
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_dyrn8"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_sjo4n"]
 size = Vector3(5, 0.35, 1.5)
 
-[node name="Jet" type="AnimatableBody3D"]
+[node name="Jet" instance=ExtResource("1_nbyol")]
 sync_to_physics = false
-script = ExtResource("2_ryocp")
 
-[node name="Model" parent="." instance=ExtResource("1_junfv")]
-
-[node name="BodyCollisionShape" type="CollisionShape3D" parent="."]
+[node name="BodyCollisionShape" type="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.19209e-07, 0.131716)
-shape = SubResource("CapsuleShape3D_ywudb")
+shape = SubResource("CapsuleShape3D_mda74")
 
-[node name="WingCollisionShape" type="CollisionShape3D" parent="."]
+[node name="WingCollisionShape" type="CollisionShape3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00891113, -0.0222321, -0.240967)
-shape = SubResource("BoxShape3D_dyrn8")
+shape = SubResource("BoxShape3D_sjo4n")
