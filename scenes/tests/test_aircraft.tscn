@@ -13,6 +13,11 @@ script/source = "extends Node
 @onready var cam = $Camera3D as SmoothCamera
 
 
+func _ready():
+	Settings.aircraft_primary_color = Color.DARK_RED
+	Settings.aircraft_secondary_color = Color.ORANGE
+
+
 func _process(delta: float) -> void:
 	#print(Engine.get_frames_per_second())
 	pass

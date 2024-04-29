@@ -29,6 +29,29 @@ animation/fps=30
 animation/trimming=false
 animation/remove_immutable_tracks=true
 import_script/path=""
-_subresources={}
+_subresources={
+"materials": {
+"AccentJetCockpit": {
+"use_external/enabled": false,
+"use_external/path": "res://materials/black_glossy.tres"
+},
+"AccentJetDark": {
+"use_external/enabled": false,
+"use_external/path": "res://materials/black_matte.tres"
+},
+"AccentJetMetal": {
+"use_external/enabled": false,
+"use_external/path": "res://materials/gray_metal.tres"
+},
+"Primary": {
+"use_external/enabled": false,
+"use_external/path": "res://materials/red_matte.tres"
+},
+"Secondary": {
+"use_external/enabled": false,
+"use_external/path": "res://materials/white_matte.tres"
+}
+}
+}
 gltf/naming_version=1
 gltf/embedded_image_handling=1

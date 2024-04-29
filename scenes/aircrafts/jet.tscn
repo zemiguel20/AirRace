@@ -1,6 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://prcokf1pvore"]
+[gd_scene load_steps=10 format=3 uid="uid://prcokf1pvore"]
 
 [ext_resource type="PackedScene" uid="uid://ckxb841ctf44l" path="res://models/jet.glb" id="1_nbyol"]
+[ext_resource type="Material" uid="uid://bbmot643n22db" path="res://materials/cyan_toon.tres" id="2_d6n4q"]
+[ext_resource type="Script" path="res://scripts/material_changer_component.gd" id="2_dmdnr"]
+[ext_resource type="Material" uid="uid://bp8k8urtk1x80" path="res://materials/brown_toon.tres" id="3_a04lb"]
+[ext_resource type="Material" uid="uid://bhrxe4i5d4rwc" path="res://materials/gray_metal.tres" id="4_l8cnd"]
+[ext_resource type="Material" uid="uid://bn8rogfiq1eh0" path="res://materials/black_matte.tres" id="5_6tqod"]
+[ext_resource type="Material" uid="uid://cy1ufdgi7psg0" path="res://materials/black_glossy.tres" id="6_2akdh"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mda74"]
 radius = 0.433626
@@ -12,6 +18,13 @@ size = Vector3(5, 0.35, 1.5)
 [node name="Jet" instance=ExtResource("1_nbyol")]
 sync_to_physics = false
 
+[node name="Model" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_d6n4q")
+surface_material_override/1 = ExtResource("3_a04lb")
+surface_material_override/2 = ExtResource("4_l8cnd")
+surface_material_override/3 = ExtResource("5_6tqod")
+surface_material_override/4 = ExtResource("6_2akdh")
+
 [node name="BodyCollisionShape" type="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, -1.19209e-07, 0.131716)
 shape = SubResource("CapsuleShape3D_mda74")
@@ -19,3 +32,7 @@ shape = SubResource("CapsuleShape3D_mda74")
 [node name="WingCollisionShape" type="CollisionShape3D" parent="." index="2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00891113, -0.0222321, -0.240967)
 shape = SubResource("BoxShape3D_sjo4n")
+
+[node name="MaterialChangerComponent" type="Node" parent="." index="3" node_paths=PackedStringArray("_target")]
+script = ExtResource("2_dmdnr")
+_target = NodePath("../Model")
